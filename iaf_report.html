@@ -114,10 +114,11 @@
        HEADER SECTION
        ========================================== */
     .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      padding-bottom: 30px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+      padding-bottom: 35px;
       margin-bottom: 40px;
       border-bottom: 1.5px solid var(--accent-primary);
       position: relative;
@@ -132,83 +133,95 @@
       height: 10px;
     }
 
-    .logo-area {
+    .header-left {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 20px;
     }
 
-    .logo-svg {
-      width: 80px;
-      height: 34px;
+    .header-logo-img {
+      height: 52px;
+      width: auto;
+      display: block;
     }
 
-    .logo-svg path {
-      stroke: var(--accent-primary);
-      stroke-width: 2.5;
-      stroke-linecap: round;
-      fill: none;
-    }
-
-    .logo-svg text {
-      fill: var(--text-primary);
-      font-family: var(--font-title);
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: 1px;
-    }
-
-    .logo-title-group {
+    .header-title-group {
       display: flex;
       flex-direction: column;
     }
 
-    .logo-text {
+    .newsletter-title {
       font-family: var(--font-title);
       font-weight: 900;
-      font-size: 26px;
+      font-size: 32px;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
       color: var(--text-primary);
-      letter-spacing: 1.5px;
-      line-height: 1.0;
+      line-height: 1.1;
+      background: linear-gradient(90deg, var(--text-primary) 50%, var(--accent-primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .logo-subtitle {
-      font-family: var(--font-code);
-      font-size: 9px;
-      color: var(--accent-primary);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-top: 4px;
-    }
-
-    .header-right {
-      text-align: right;
-      max-width: 320px;
-    }
-
-    .issue-label {
-      font-family: var(--font-code);
-      font-size: 9px;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 6px;
-    }
-
-    .issue-date {
-      font-family: var(--font-code);
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--accent-hover);
-      letter-spacing: 0.5px;
-    }
-
-    .subtitle {
+    .newsletter-subtitle {
       font-family: var(--font-body);
       font-size: 11px;
       color: var(--text-secondary);
-      margin-top: 6px;
-      line-height: 1.4;
+      margin-top: 4px;
+      font-weight: 400;
+    }
+
+    .header-metadata-box {
+      background-color: rgba(4, 7, 9, 0.4);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-sm);
+      padding: 12px 16px;
+      font-family: var(--font-code);
+      font-size: 10px;
+      min-width: 190px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+
+    .meta-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .meta-label {
+      color: var(--text-secondary);
+    }
+
+    .meta-value {
+      color: var(--accent-primary);
+      font-weight: 700;
+    }
+
+    .meta-value.status-online {
+      color: var(--accent-hover);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meta-value.status-online::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--accent-hover);
+      box-shadow: 0 0 8px var(--accent-hover);
+      animation: blink-status 1.5s infinite alternate;
+    }
+
+    @keyframes blink-status {
+      from { opacity: 0.4; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1.1); }
     }
 
     /* ==========================================
@@ -221,12 +234,12 @@
     .section-title {
       font-family: var(--font-title);
       font-weight: 700;
-      font-size: 18px;
+      font-size: 17px;
       color: var(--accent-primary);
       margin-bottom: 20px;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
@@ -236,6 +249,17 @@
       padding-right: 8px;
       position: relative;
       z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .title-icon {
+      width: 18px;
+      height: 18px;
+      color: var(--accent-primary);
+      stroke-width: 2.2;
+      flex-shrink: 0;
     }
 
     /* Linear divider that fades out */
@@ -259,7 +283,6 @@
       box-shadow: var(--shadow-glow);
     }
 
-    /* Subtly curved background grid in hot take */
     .hot-take-box::after {
       content: '';
       position: absolute;
@@ -553,47 +576,74 @@
        ========================================== */
     .footer {
       margin-top: 50px;
-      padding-top: 24px;
+      padding-top: 30px;
       border-top: 1.5px solid var(--border-color);
+      font-family: var(--font-code);
+      font-size: 10px;
+      color: var(--text-secondary);
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      font-family: var(--font-code);
-      font-size: 9px;
-      color: var(--text-secondary);
+      gap: 16px;
     }
 
-    .footer-meta {
+    .footer-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 100%;
     }
 
-    .footer-sources {
-      line-height: 1.5;
-      max-width: 500px;
+    .footer-brand-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-logo-img {
+      height: 26px;
+      width: auto;
+      opacity: 0.8;
+    }
+
+    .footer-sysinfo {
+      display: block;
+      font-size: 8px;
+      color: #5b7175;
+      margin-top: 2px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-links a {
+      color: var(--accent-primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-hover);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(13, 166, 158, 0.08);
+      padding-top: 12px;
       color: #5b7175;
     }
 
-    .footer-meta a {
-      color: var(--accent-primary);
-      text-decoration: none;
-      font-weight: 700;
-      transition: color 0.3s ease;
-      border-bottom: 1px solid rgba(13, 166, 158, 0.2);
+    .footer-sources {
+      max-width: 500px;
+      line-height: 1.4;
     }
 
-    .footer-meta a:hover {
-      color: var(--accent-hover);
-      border-bottom-color: var(--accent-hover);
-    }
-
-    .footer-signature {
-      font-weight: 700;
-      color: var(--text-primary);
-      text-transform: uppercase;
-      letter-spacing: 1px;
+    .footer-license {
+      font-size: 9px;
+      text-align: right;
     }
 
     /* Dynamic line decorations representing the organic curves */
@@ -637,21 +687,20 @@
          HEADER
          ========================================== -->
     <header class="header">
-      <div class="logo-area">
-        <svg class="logo-svg" viewBox="0 0 60 30" aria-label="IAF Logo">
-          <path d="M5,22 Q20,5 30,22 T55,8" />
-          <text x="11" y="19">IAF</text>
-        </svg>
-        <div class="logo-title-group">
-          <h1 class="logo-text">IAF</h1>
-          <span class="logo-subtitle">IA que Funciona</span>
+      <div class="header-left">
+        <!-- Brand generated PNG logo -->
+        <img src="iaf_logo.png" alt="IAF Logo" class="header-logo-img">
+        <div class="header-title-group">
+          <h1 class="newsletter-title">Manhã Aumentada</h1>
+          <span class="newsletter-subtitle">A dose diária de conhecimento do profissional aumentado por IA</span>
         </div>
       </div>
       
-      <div class="header-right">
-        <div class="issue-label">Edição Diária</div>
-        <div class="issue-date">05/06/2026 — 07:50 UTC</div>
-        <p class="subtitle">A dose diária de conhecimento do profissional aumentado por IA</p>
+      <div class="header-metadata-box">
+        <div class="meta-row"><span class="meta-label">ID:</span> <span class="meta-value">ED. DIÁRIA</span></div>
+        <div class="meta-row"><span class="meta-label">DATA:</span> <span class="meta-value">05 JUN 2026</span></div>
+        <div class="meta-row"><span class="meta-label">HORA:</span> <span class="meta-value">07:50 UTC</span></div>
+        <div class="meta-row"><span class="meta-label">SYS:</span> <span class="meta-value status-online">CONECTADO</span></div>
       </div>
       
       <!-- Overlapping accent curve -->
@@ -661,18 +710,23 @@
     </header>
 
     <!-- ==========================================
-         HOT TAKE SECTION
+         EDITORIAL / HOT TAKE SECTION
          ========================================== -->
     <section class="section">
       <div class="section-title">
-        <span>🔥 Hot Take</span>
+        <span>
+          <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
+          </svg>
+          Editorial // Hot Take
+        </span>
         <div class="line"></div>
       </div>
       
       <div class="hot-take-box">
         <p class="hot-take-text">
           <strong>US$ 2,5 trilhões em gastos com IA em 2026. 95% com zero retorno mensurável.</strong> O dado do MIT NANDA Initiative ecoou esta semana como um sino de igreja num prédio em chamas: enquanto a indústria comemora a Anthropic abrindo IPO a quase US$ 1 trilhão, quem está na trincheira dos projetos reais vê um abismo entre o hype e a entrega. Não é que a IA não funcione — é que <strong>73% do trabalho de engenharia pra colocar IA em produção não tem nada a ver com o modelo</strong>. Data pipelines, integração com legados, tooling de human-in-the-loop. As empresas gastam 70% do budget no modelo e 30% na infraestrutura. Projetos que <em>shipam</em> de verdade invertem essa proporção.<br><br>
-          A pergunta que fica — e que ninguém nos keynotes responde — é: <strong>você está construindo pra parecer inteligente ou pra entregar valor?</strong> Porque 14% de taxa de erro em dados de treinamento, US$ 920 mil em engenharia sem kill criteria e 11 meses sem entregar nada não é um problema de IA. É um problema de gestão.
+          A pergunta que fica — e que ninguém nos keynotes responde — é: <strong>você está construindo pra parecer inteligente ou pra entregar valor?</strong> Porque 14% de taxa de erro em dados de treinamento, US$ 920 mil in engenharia sem kill criteria e 11 meses sem entregar nada não é um problema de IA. É um problema de gestão.
         </p>
       </div>
     </section>
@@ -687,7 +741,14 @@
          ========================================== -->
     <section class="section">
       <div class="section-title">
-        <span>📰 Radar de Notícias</span>
+        <span>
+          <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 12L16 8" />
+            <path d="M12 6a6 6 0 0 1 6 6" />
+          </svg>
+          Radar de Notícias
+        </span>
         <div class="line"></div>
       </div>
       
@@ -768,7 +829,14 @@
          ========================================== -->
     <section class="section">
       <div class="section-title">
-        <span>🎯 Deep Dive</span>
+        <span>
+          <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <circle cx="12" cy="12" r="6" />
+            <circle cx="12" cy="12" r="2" />
+          </svg>
+          Análise // Deep Dive
+        </span>
         <div class="line"></div>
       </div>
 
@@ -821,7 +889,12 @@
          ========================================== -->
     <section class="section">
       <div class="section-title">
-        <span>💡 Aplicação Prática</span>
+        <span>
+          <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+          </svg>
+          Aplicação Prática
+        </span>
         <div class="line"></div>
       </div>
 
@@ -861,7 +934,7 @@
             <h3 class="app-title">Second Brain Organizer</h3>
           </div>
           <p class="app-desc">
-            <em>"Vou colar minhas anotações, ideias e pensamentos abaixo. Seu trabalho é: (1) identificar temas centrais e agrupar, (2) transformar bullets bagunçados em itens acionáveis, (3) destacar as 3 ideias mais importantes, (4) sugerir conexões entre ideias, (5) criar um resumo organizado."</em><br>
+            <em>"Vou colar minhas anotações, ideias e pensamentos abaixo. Seu trabalho é: (1) identificar temas centrais e agrupar, (2) transformar bullets bagunçados in itens acionáveis, (3) destacar as 3 ideias mais importantes, (4) sugerir conexões entre ideias, (5) criar um resumo organizado."</em><br>
             Fonte: <strong>r/ChatGPT</strong> — um dos prompts mais votados da semana.
           </p>
         </div>
@@ -878,38 +951,43 @@
          ========================================== -->
     <section class="section">
       <div class="section-title">
-        <span>⚡ Pulso da Comunidade</span>
+        <span>
+          <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+          </svg>
+          Telemetria // Pulso da Comunidade
+        </span>
         <div class="line"></div>
       </div>
       
       <div class="community-grid">
         <div class="community-item">
-          <span class="community-sentiment sentiment-hot">🔥 Quente</span>
+          <span class="community-sentiment sentiment-hot">Destaque</span>
           <p><strong>r/artificial:</strong> "Claude Opus 4.8 está completamente inutilizável agora" — 2.4K+ upvotes, centenas de relatos de comportamento passivo-agressivo.</p>
         </div>
         
         <div class="community-item">
-          <span class="community-sentiment sentiment-hot">🔥 Quente</span>
+          <span class="community-sentiment sentiment-hot">Destaque</span>
           <p><strong>r/LocalLLaMa:</strong> Usuário monta servidor com EPYC 9575F + 4× RTX 3090 (96GB VRAM) + 768GB RAM. "Finalmente, Nalthis está no ar."</p>
         </div>
         
         <div class="community-item">
-          <span class="community-sentiment sentiment-mixed">⚠ Misto</span>
+          <span class="community-sentiment sentiment-mixed">Misto</span>
           <p><strong>r/SaaS:</strong> Levantamento com 50+ founders — MRR médio de US$ 2.450, variando de US$ 4,99 a US$ 510.000. Transparência total.</p>
         </div>
         
         <div class="community-item">
-          <span class="community-sentiment sentiment-mixed">⚠ Misto</span>
+          <span class="community-sentiment sentiment-mixed">Misto</span>
           <p><strong>HN Nova York:</strong> "I didn't become a developer to review AI slop" — engenheiro desabafa sobre PRs gerados por IA que mais atrapalham que ajudam.</p>
         </div>
         
         <div class="community-item">
-          <span class="community-sentiment sentiment-negative">🔴 Crítico</span>
+          <span class="community-sentiment sentiment-negative">Alerta</span>
           <p><strong>r/ChatGPTPro:</strong> OpenAI lança "Dreaming" — upgrade de memória que chega ativado por padrão e transforma memórias salvas em "mush genérico".</p>
         </div>
         
         <div class="community-item">
-          <span class="community-sentiment sentiment-hot">🔥 Quente</span>
+          <span class="community-sentiment sentiment-hot">Destaque</span>
           <p><strong>HN Frontpage (#2):</strong> Anthropic publica "When AI Builds Itself" — dados internos mostram Claude acelerando desenvolvimento de IA. 421 pts, 557 comments.</p>
         </div>
       </div>
@@ -919,12 +997,26 @@
          FOOTER
          ========================================== -->
     <footer class="footer">
-      <div class="footer-meta">
-        <span class="footer-signature">IAF — IA que Funciona</span>
-        <span><a href="https://hermes-agent.nousresearch.com" target="_blank">Gerado por Hermes Agent</a></span>
+      <div class="footer-top">
+        <div class="footer-brand-meta">
+          <img src="iaf_logo.png" alt="IAF Logo" class="footer-logo-img">
+          <div>
+            <span class="footer-signature">IAF — IA que Funciona</span>
+            <span class="footer-sysinfo">PROTOCOL: LATENT_SYNC_v1.4</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/idconsultoria/iaf" target="_blank">iaf://github</a>
+          <a href="https://hermes-agent.nousresearch.com" target="_blank">iaf://hermes-agent</a>
+        </div>
       </div>
-      <div class="footer-sources">
-        Fontes: The Rundown, Superhuman AI, HN, Reddit, Reuters, MIT News, VentureBeat
+      <div class="footer-bottom">
+        <div class="footer-sources">
+          Fontes: The Rundown, Superhuman AI, HN, Reddit, Reuters, MIT News, VentureBeat
+        </div>
+        <div class="footer-license">
+          Licença MIT — Código Livre
+        </div>
       </div>
     </footer>
 
