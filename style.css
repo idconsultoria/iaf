@@ -51,7 +51,7 @@ body {
   --border-radius: 12px;
   --border-color: rgba(13, 166, 158, 0.2);
   --line-weight: 1.5px;
-  --shadow-glow: 0 8px 32px rgba(13, 166, 158, 0.15);
+  --shadow-glow: 0 8px 32px rgba(0, 255, 213, 0.2);
   --grid-opacity: 0.04;
   --button-hover-bg: #0da69e;
   --button-hover-text: #080d0f;
