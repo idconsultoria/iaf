@@ -1,55 +1,83 @@
-# Manual de Identidade Visual e Biblioteca de Componentes — IAF
+# O Sintetizador Orgânico — Guia de Estilo & Manual de Identidade Visual (IAF)
 
-Este manual documenta de forma expandida a identidade visual **"O Sintetizador Orgânico"**, o estilo principal selecionado para a comunidade **IA que Funciona (IAF)**. Ele detalha as diretrizes estéticas e disponibiliza 15 componentes em HTML prontos para uso, alinhados com a filosofia de unir a rigidez pragmática da engenharia à fluidez orgânica das linhas e do tom azul teal.
+> **"A inteligência artificial generativa é fluida, caótica e orgânica. A engenharia que a coloca de pé é precisa, estruturada e pragmática. A nossa identidade visual é a intersecção exata entre esses dois mundos."**
 
----
+Bem-vindo ao guia de estilo oficial da **IA que Funciona (IAF)**. Este documento não é apenas uma lista de especificações técnicas; é a codificação visual da alma da nossa comunidade. Ele foi desenhado para praticantes, engenheiros de prompt, designers e entusiastas que desejam construir interfaces que fujam do clichê corporativo asséptico de startups e do caos estético cyberpunk gratuito.
 
-## 1. Fundamentos da Identidade: O Sintetizador Orgânico
-
-A identidade é construída sobre três pilares visuais:
-
-1.  **A Grade Pragmática (Estrutura)**: Interfaces divididas por linhas finas de `1px` com baixa opacidade, alinhamentos rigorosos e caixas limpas. Representa o código, a lógica e o foco em resultados.
-2.  **O Fluxo Orgânico (Alma)**: Linhas curvas dinâmicas desenhadas algoritmocamente ou via vetores SVG que interligam seções e se sobrepõem à grade reta. Representa a IA generativa, a plasticidade cognitiva e a inovação.
-3.  **O Tom Teal (Energia)**: O teal (`#0da69e`) como acento principal, acompanhado de sua versão neon (`#00ffd5`) para interações (hover/foco) e um chumbo profundo (`#080d0f`) como base de baixo contraste que substitui o preto puro corporativo.
+Aqui, a tecnologia encontra a biologia digital através de grades precisas, curvas dinâmicas e o tom vibrante do Azul Teal.
 
 ---
 
-## 2. Variáveis de Design (CSS Custom Properties)
+## 1. A Filosofia Estética: "Pragmatismo Audacioso"
 
-Para que os componentes funcionem de maneira coesa, inclua estas variáveis no escopo `:root` do seu projeto CSS:
+A maioria das comunidades e startups de tecnologia sofre de uma crise de mesmice visual: degradês abstratos roxos, cantos exageradamente arredondados e fontes geométricas que parecem não ter voz. 
 
-```css
-:root {
-  /* Paleta de Cores */
-  --bg-primary: #080d0f;       /* Fundo principal chumbo */
-  --bg-secondary: #0d1519;     /* Fundo secundário (cards e blocos) */
-  --accent-primary: #0da69e;   /* Teal principal */
-  --accent-hover: #00ffd5;     /* Teal neon para interações */
-  --accent-muted: rgba(13, 166, 158, 0.12); /* Fundo sutil com transparência */
-  --text-primary: #f3f6f6;     /* Texto de leitura principal */
-  --text-secondary: #8a9d9f;   /* Texto secundário/apoio */
-  
-  /* Fontes */
-  --font-title: 'Outfit', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --font-code: 'Fira Code', monospace;
-  
-  /* Estrutura */
-  --border-radius: 12px;
-  --border-color: rgba(13, 166, 158, 0.2);
-  --line-weight: 1.5px;
-  --shadow-glow: 0 8px 32px rgba(13, 166, 158, 0.15);
-}
+A **IAF** propõe uma direção diferente, batizada de **O Sintetizador Orgânico**. Nossa estética é guiada por três princípios narrativos:
+
+```
+    [ A GRADE TÉCNICA ]        +        [ A LINHA FLUIDA ]       =   O SINTETIZADOR ORGÂNICO
+(Rigidez, Lógica, Produção)        (IA Generativa, Conexões)         (Pragmatismo com Alma)
 ```
 
+*   **A Rigidez da Grade (O Pragmatismo)**: Nossas páginas nascem sobre uma malha modular de engenharia. Cada elemento de texto, botão e card está alinhado a uma grade invisível de pixels. Isso transmite confiabilidade, seriedade e a certeza de que "isso aqui funciona".
+*   **A Fluidez da Curva (A Audácia)**: Cruzando esta grade, surgem linhas curvas suaves e contínuas de 1px a 3px de espessura. Elas agem como rios sinápticos, ligando ideias e seções de maneira natural. Elas representam a IA generativa: maleável, em constante evolução, humana e imprevisível.
+*   **A Luz do Latente (O Foco)**: A luz na nossa interface é pontual. Não usamos fundos brilhantes que cansam a vista; o fundo é uma noite profunda chumbo-petróleo (`#080d0f`), permitindo que pequenos pontos de destaque em Teal Neon (`#00ffd5`) guiem o olhar do usuário como estrelas guia na tela.
+
 ---
 
-## 3. Biblioteca de Componentes HTML (15 Exemplos)
+## 2. A Paleta de Cores e sua Ressonância Cognitiva
 
-Abaixo estão definidos os componentes em HTML puro estruturado com classes semânticas baseadas nas variáveis de design descritas acima.
+As cores da IAF foram selecionadas para criar uma atmosfera de foco imersivo, simulando um ambiente de desenvolvimento avançado mas com um calor orgânico subjacente.
 
-### 1. Logo Monograma com Curva Integrada
-O logo combina tipografia estruturada a um vetor contínuo que simboliza o traço curvo marcante da IAF.
+```
++-----------------------------------------------------------------------+
+|  #080d0f (Fundo Chumbo) -> Profundidade, calmaria e foco prolongado   |
++-----------------------------------------------------------------------+
+|  #0da69e (Teal Principal) -> A harmonia entre o digital e o orgânico  |
++-----------------------------------------------------------------------+
+|  #00ffd5 (Teal Neon) -> Energia viva, interações e tomadas de ação    |
++-----------------------------------------------------------------------+
+```
+
+*   **Base: `#080d0f` (Chumbo Profundo)**  
+    Substitui o preto puro digital (`#000000`), que é agressivo aos olhos, e o cinza corporativo comum. É um cinza-chumbo com um leve subtom azulado. Evoca profundidade computacional e permite que o contraste do texto permaneça extremamente nítido sem ser cansativo.
+*   **Acento Principal: `#0da69e` (Azul Teal)**  
+    O azul representa a estabilidade e a técnica. O verde representa o orgânico e o crescimento. O Teal une o melhor dos dois mundos. É a cor que ancora a nossa marca, usada em títulos secundários, bordas ativas e grafismos de relevo.
+*   **Destaque Vivo: `#00ffd5` (Teal Neon)**  
+    A energia do espaço latente da IA. É um ciano esverdeado super saturado, usado cirurgicamente em interações críticas (hover de botões, indicadores de conexões de rede e pontos de foco).
+*   **Suporte: `#0d1519` (Cinza Petróleo Secundário)**  
+    Usado para preenchimento de cards, cabeçalhos de tabelas e blocos secundários, criando camadas de profundidade visual sobre o fundo principal.
+*   **Leitura: `#f3f6f6` (Off-White)**  
+    Um branco suave, levemente acinzentado, que brilha com elegância sem a agressividade do branco puro `#ffffff`.
+
+---
+
+## 3. Tipografia: Vozes Complementares
+
+A IAF fala através de três famílias tipográficas específicas no Google Fonts, cada uma assumindo um papel na narrativa visual:
+
+*   **Outfit (Títulos & Destaques)**  
+    *Voz: Moderna e Amigável.*  
+    Com traços geométricos simplificados e cantos ligeiramente suavizados, `Outfit` traz um ar contemporâneo e inovador. Ela quebra a frieza técnica das fontes monospaçadas tradicionais, dando as boas-vindas ao visitante na cabeceira da página.
+*   **Inter (Texto Corrido & Corpo)**  
+    *Voz: Neutra, Transparente e Altamente Legível.*  
+    `Inter` é a campeã da legibilidade em telas digitais. Usada para parágrafos, descrições e formulários, ela garante que as ideias da comunidade sejam transmitidas sem fricção ou ruído visual.
+*   **Fira Code (Dados, Tags & Status)**  
+    *Voz: O Dialeto do Construtor.*  
+    Por ser monospaçada e possuir ligaduras de código, `Fira Code` é a assinatura visual de que a IAF é feita por praticantes. Ela é usada para tags, metadados, saídas de terminal e pequenos detalhes estruturais.
+
+---
+
+## 4. Biblioteca de Componentes HTML (15 Exemplos)
+
+Abaixo estão os 15 componentes oficiais da IAF. Cada um acompanha uma narrativa de **Intenção Estética** para explicar o porquê de seu design e as **Diretrizes de Implementação** para garantir consistência visual no código.
+
+---
+
+### Componente 1: Logo Monograma com Curva Integrada
+* **Intenção Estética**: Representar graficamente o nome "IAF" de forma compacta, onde uma única curva suave de Bézier corta as letras rígidas, ilustrando fisicamente a intersecção de lógica e fluidez.
+* **Diretrizes**: A curva deve usar a cor acentuada (`--accent-primary`) e ter extremidades arredondadas (`stroke-linecap="round"`). O texto "IAF" usa `Outfit` com peso `900` para estabilidade.
+
 ```html
 <!-- Componente: Logo Monograma -->
 <div class="iaf-logo-wrapper">
@@ -62,8 +90,12 @@ O logo combina tipografia estruturada a um vetor contínuo que simboliza o traç
 </div>
 ```
 
-### 2. Barra de Navegação Principal (Header)
-Barra superior transparente para ser sobreposta às linhas e grids gerados no fundo do site.
+---
+
+### Componente 2: Barra de Navegação Principal (Header)
+* **Intenção Estética**: O cabeçalho deve flutuar sobre o background sem criar uma barreira visual sólida. A transparência permite que as linhas geradas dinamicamente no Canvas do fundo do site corram por baixo, unificando o visual.
+* **Diretrizes**: Manter o fundo transparente ou levemente esfumaçado com `backdrop-filter: blur(8px)`. Use links em `var(--text-secondary)` transicionando para `--accent-primary` no hover.
+
 ```html
 <!-- Componente: Header Principal -->
 <header class="iaf-navbar">
@@ -82,8 +114,12 @@ Barra superior transparente para ser sobreposta às linhas e grids gerados no fu
 </header>
 ```
 
-### 3. Botão Principal (Default & Hover state)
-Botão com cantos arredondados suavizados, contraste nítido e efeito de sombreamento com brilho teal.
+---
+
+### Componente 3: Botões Principais (Primário e Secundário)
+* **Intenção Estética**: O botão primário deve parecer "carregado eletricamente". Ele usa o preenchimento teal e emite um brilho suave (`box-shadow` neon). O botão secundário é o contrapeso discreto: apenas uma borda elegante sem brilho.
+* **Diretrizes**: A transição de hover deve usar `cubic-bezier(0.25, 0.8, 0.25, 1)` para parecer instantânea mas suave, mudando a cor para o Teal Neon (`--accent-hover`) e elevando o botão ligeiramente em `-2px`.
+
 ```html
 <!-- Componente: Botão Primário -->
 <button class="iaf-btn iaf-btn-primary">
@@ -96,8 +132,12 @@ Botão com cantos arredondados suavizados, contraste nítido e efeito de sombrea
 </button>
 ```
 
-### 4. Badge Técnico / Etiqueta de Status
-Badges compactos em fonte mono usados para sinalizar categorias de projetos ou status em tempo real.
+---
+
+### Componente 4: Badges Técnicos de Status e Categoria
+* **Intenção Estética**: Substituir etiquetas coloridas genéricas por blocos limpos em fonte mono. O badge de status ativo contém um ponto luminoso que pulsa suavemente, mimetizando sistemas de servidores e computação em tempo real.
+* **Diretrizes**: Fonte `Fira Code` em caixa alta. O círculo interno deve usar animações CSS simples de escala e opacidade para criar o efeito "pulsante".
+
 ```html
 <!-- Componente: Badges de Categoria -->
 <span class="iaf-badge">
@@ -110,8 +150,12 @@ Badges compactos em fonte mono usados para sinalizar categorias de projetos ou s
 </span>
 ```
 
-### 5. Card de Princípios (Manifesto)
-Card fechado com numeração em algarismo romano e foco conceitual em alto contraste.
+---
+
+### Componente 5: Card de Princípios (Manifesto)
+* **Intenção Estética**: Organizar o manifesto da comunidade em blocos rígidos mas premium. A numeração romana gigante em teal atua como âncora visual e dá um tom intelectual e editorial ao manifesto.
+* **Diretrizes**: Cantos arredondados de `12px` e borda sutil de `1px` em `rgba(13, 166, 158, 0.2)`. O card deve clarear ligeiramente o fundo ao sofrer hover do mouse.
+
 ```html
 <!-- Componente: Card de Princípio -->
 <div class="iaf-principle-card">
@@ -121,8 +165,12 @@ Card fechado com numeração em algarismo romano e foco conceitual em alto contr
 </div>
 ```
 
-### 6. Card de Projeto com Pré-visualização Vetorial
-Card com uma área dedicada para exibir linhas de oscilação representativas da IA antes do texto descritivo.
+---
+
+### Componente 6: Card de Projeto com Pré-visualização Vetorial
+* **Intenção Estética**: Exibir as criações da comunidade unindo dados, código e curvas. A parte superior do card contém um "visor de oscilação" simulado com SVGs de ondas senoidais, conectando o card ao traço curvo da IAF.
+* **Diretrizes**: A seção de mídia do card deve ter fundo mais escuro para destacar as linhas de visualização. O rodapé do card separa a pilha tecnológica (`tech-stack`) do link de ação com uma borda sutil.
+
 ```html
 <!-- Componente: Card de Projeto Featured -->
 <div class="iaf-project-card">
@@ -144,8 +192,12 @@ Card com uma área dedicada para exibir linhas de oscilação representativas da
 </div>
 ```
 
-### 7. Bloco Hero de Chamada (Call to Action)
-O bloco principal do topo da landing page, projetado para receber as curvas geradas via Canvas no fundo.
+---
+
+### Componente 7: Bloco Hero de Chamada (Call to Action)
+* **Intenção Estética**: A "porta de entrada" do site. A tipografia do título (`Outfit`) é gigante e o destaque em azul teal no texto enfatiza que a IA *realmente funciona*. A diagramação deve ser centralizada e limpa para deixar o fundo com curvas respirar.
+* **Diretrizes**: Use a tag `<span>` para o texto destacado e estilize-o com gradiente linear sutil de Teal Principal para Teal Neon.
+
 ```html
 <!-- Componente: Bloco Hero -->
 <section class="iaf-hero-block">
@@ -161,8 +213,12 @@ O bloco principal do topo da landing page, projetado para receber as curvas gera
 </section>
 ```
 
-### 8. Divisor de Seção com Curva SVG
-Em vez de linhas retas cinzas, as divisões de blocos de página usam curvas suaves de Bézier.
+---
+
+### Componente 8: Divisor de Seção com Curva SVG
+* **Intenção Estética**: Eliminar cortes retos abruptos entre as seções do site. A curva de Bézier em SVG liga a transição de fundos escuros de forma suave e harmônica, quebrando a monotonia do layout retangular.
+* **Diretrizes**: O SVG deve ser responsivo (`preserveAspectRatio="none"`). A linha de traço superior deve usar a espessura da variável `--line-weight` para garantir consistência com o resto dos traços do site.
+
 ```html
 <!-- Componente: Divisor Curvo de Transição -->
 <div class="iaf-divider-container">
@@ -175,8 +231,12 @@ Em vez de linhas retas cinzas, as divisões de blocos de página usam curvas sua
 </div>
 ```
 
-### 9. Campo de Inserção com Borda Focada (Form Input)
-Campos de entrada que recebem destaque brilhante em azul teal e mudam sua sombra ao focar.
+---
+
+### Componente 9: Campo de Inserção com Borda Focada (Form Input)
+* **Intenção Estética**: O formulário é a principal entrada de dados para novos membros. Ele deve parecer integrado ao design do site, com uma borda fina que se ilumina com o brilho teal apenas ao receber o foco do cursor.
+* **Diretrizes**: No CSS, use a transição na propriedade `border-color` e aplique um efeito de `box-shadow` neon bem sutil (`rgba(13, 166, 158, 0.2)`) no estado `:focus-within`.
+
 ```html
 <!-- Componente: Input Técnico de E-mail -->
 <div class="iaf-input-group">
@@ -188,8 +248,12 @@ Campos de entrada que recebem destaque brilhante em azul teal e mudam sua sombra
 </div>
 ```
 
-### 10. Card de Métrica / Estatística
-Módulos compactos de dados usados para telemetria ou indicadores de projetos da comunidade.
+---
+
+### Componente 10: Card de Métrica / Estatística
+* **Intenção Estética**: Mostrar o sucesso pragmático das soluções criadas. O número deve ter grande escala de contraste, destacado em fonte mono, com um indicador claro sobre o que essa economia representa.
+* **Diretrizes**: A métrica principal deve usar `var(--accent-primary)`. O card segue as mesmas regras de borda de `1px` e cantos arredondados de `12px` dos demais cards do sistema.
+
 ```html
 <!-- Componente: Card de Métrica -->
 <div class="iaf-metric-card">
@@ -202,8 +266,12 @@ Módulos compactos de dados usados para telemetria ou indicadores de projetos da
 </div>
 ```
 
-### 11. Box de Telemetria / Logs (Estilo Terminal)
-Área estruturada para exibir saídas de código e avisos técnicos, com cabeçalho de status da conexão.
+---
+
+### Componente 11: Box de Telemetria / Logs (Estilo Terminal)
+* **Intenção Estética**: Emular a tela de um terminal de desenvolvimento clássico. É um dos componentes mais importantes para passar a alma prática da comunidade: aqui não há slides corporativos, apenas logs reais de execução.
+* **Diretrizes**: O fundo deve ser um preto quase absoluto (`#040709`) para dar contraste com as linhas de código ciano e verdes claras. As três bolinhas superiores de controle dão o toque de interface de aplicação local.
+
 ```html
 <!-- Componente: Box de Terminal -->
 <div class="iaf-terminal">
@@ -223,8 +291,12 @@ Módulos compactos de dados usados para telemetria ou indicadores de projetos da
 </div>
 ```
 
-### 12. Newsletter Form Minimalista
-Card de e-mail centralizado no meio da página de rodapé.
+---
+
+### Componente 12: Newsletter Form Minimalista
+* **Intenção Estética**: Um bloco compacto de rodapé que estimula o engajamento sem criar atrito. Ele divide a área de informações em uma coluna e o formulário em outra sobre o fundo cinza secundário.
+* **Diretrizes**: Usar em rodapés ou no final da landing page principal. O botão de inscrição deve usar `--accent-primary` para manter o foco de ação nítido.
+
 ```html
 <!-- Componente: Newsletter Minimalista -->
 <div class="iaf-newsletter-box">
@@ -239,8 +311,12 @@ Card de e-mail centralizado no meio da página de rodapé.
 </div>
 ```
 
-### 13. Grid Auxiliar (Malha Técnica de Background)
-A representação física da grade de engenharia aplicada sob a página.
+---
+
+### Componente 13: Grid Auxiliar (Malha Técnica de Background)
+* **Intenção Estética**: A manifestação visual da rigidez e do alinhamento que governa o design. A malha quadriculada de 40px deve flutuar suavemente no fundo com opacidade muito baixa para não poluir o conteúdo textual.
+* **Diretrizes**: Implemente via gradiente repetitivo em CSS puro para evitar carregamento de imagens pesadas, usando opacidade de `0.04`.
+
 ```html
 <!-- Componente: Grid Auxiliar Técnico -->
 <div class="iaf-bg-grid-overlay" aria-hidden="true">
@@ -250,8 +326,12 @@ A representação física da grade de engenharia aplicada sob a página.
 </div>
 ```
 
-### 14. Bloco de Rodapé da Comunidade (Footer)
-Rodapé pragmático combinando o monograma com informações diretas sobre a governança e direitos.
+---
+
+### Componente 14: Bloco de Rodapé da Comunidade (Footer)
+* **Intenção Estética**: O encerramento da experiência de navegação. Ele deve ser organizado em colunas bem definidas que exibem links de forma pragmática e as notas de licença de código aberto (MIT).
+* **Diretrizes**: Usar fonte `Inter` de 12px a 14px em cores secundárias (`--text-secondary`) e manter o monograma do logo presente na base.
+
 ```html
 <!-- Componente: Footer Simplificado -->
 <footer class="iaf-footer">
@@ -270,8 +350,12 @@ Rodapé pragmático combinando o monograma com informações diretas sobre a gov
 </footer>
 ```
 
-### 15. Acordeão de FAQ Técnico (Perguntas Frequentes)
-Elemento colapsável usando linhas curvas suaves como indicadores de clique.
+---
+
+### Componente 15: Acordeão de FAQ Técnico (Perguntas Frequentes)
+* **Intenção Estética**: Organizar as dúvidas frequentes da comunidade de forma limpa. Ao invés de setas genéricas, usamos um ícone minimalista e um contorno que suaviza o card ao abrir.
+* **Diretrizes**: Use as tags HTML semânticas `<details>` e `<summary>`. O ícone SVG deve rotacionar suavemente em 180 graus no estado aberto.
+
 ```html
 <!-- Componente: Item Colapsável / FAQ -->
 <details class="iaf-accordion-item">
@@ -289,131 +373,11 @@ Elemento colapsável usando linhas curvas suaves como indicadores de clique.
 
 ---
 
-## 4. Diretrizes de Implementação CSS
+## 5. Diretrizes para Micro-animações e Interatividade
 
-Para aplicar a estilização correta e fiel à identidade do **Sintetizador Orgânico** sobre os componentes acima, utilize as seguintes regras de CSS:
+A interface do **Sintetizador Orgânico** deve se comportar como um organismo técnico vivo. Para isso, siga estas regras ao escrever animações CSS ou JS:
 
-```css
-/* RESET DE ACENTOS E BOTÕES */
-.iaf-btn {
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 700;
-  padding: 10px 24px;
-  border-radius: var(--border-radius);
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.iaf-btn-primary {
-  background-color: var(--accent-primary);
-  color: var(--bg-primary);
-  box-shadow: var(--shadow-glow);
-}
-
-.iaf-btn-primary:hover {
-  background-color: var(--accent-hover);
-  color: #000;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 255, 213, 0.25);
-}
-
-.iaf-btn-secondary {
-  background-color: transparent;
-  color: var(--text-primary);
-  border: 1px solid var(--border-color);
-}
-
-.iaf-btn-secondary:hover {
-  background-color: var(--accent-muted);
-  border-color: var(--accent-primary);
-  transform: translateY(-2px);
-}
-
-.iaf-btn-sm {
-  padding: 6px 14px;
-  font-size: 12px;
-}
-
-.iaf-btn-lg {
-  padding: 14px 32px;
-  font-size: 16px;
-}
-
-/* CARDS */
-.iaf-principle-card, .iaf-project-card, .iaf-metric-card {
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
-  padding: 24px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.iaf-principle-card:hover, .iaf-project-card:hover, .iaf-metric-card:hover {
-  border-color: var(--accent-primary);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-glow);
-}
-
-/* GRADES AUXILIARES */
-.iaf-bg-grid-overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  pointer-events: none;
-  background-image: 
-    linear-gradient(rgba(13, 166, 158, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(13, 166, 158, 0.04) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-
-/* TERMINAL LOGS */
-.iaf-terminal {
-  background-color: #040709;
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  font-family: var(--font-code);
-}
-
-.iaf-terminal-header {
-  background-color: var(--bg-secondary);
-  border-bottom: 1px solid var(--border-color);
-  padding: 10px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.iaf-terminal-dots {
-  display: flex;
-  gap: 6px;
-}
-
-.iaf-terminal-dots span {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-}
-
-.dot-red { background-color: #ff5555; }
-.dot-yellow { background-color: #ffb86c; }
-.dot-green { background-color: #50fa7b; }
-
-.iaf-terminal-title {
-  font-size: 11px;
-  color: var(--text-secondary);
-}
-
-.iaf-terminal-body {
-  padding: 16px;
-  color: #a9fffd;
-  font-size: 13px;
-  line-height: 1.6;
-  overflow-x: auto;
-}
-```
+1.  **Curva de Aceleração**: Nunca use acelerações mecânicas lineares (`transition: all 0.3s linear`). Prefira curvas de transição humanas e velozes, como `cubic-bezier(0.25, 0.8, 0.25, 1)`.
+2.  **O Efeito de Brilho (Glow)**: Ao passar o mouse sobre botões primários ou inputs ativos, o box-shadow deve aumentar sua opacidade suavemente, simulando o acendimento de um tubo de néon.
+3.  **Movimento da Linha de Fundo**: O Canvas generativo do background deve correr a uma velocidade constante e muito lenta (velocidade base de `1.0x` ou menos) para evitar distrações na leitura.
+4.  **Micro-interações de Hover**: Cards devem subir levemente (`transform: translateY(-4px)`) e clarear seu contorno para dar a resposta física ao usuário de que aquele item é clicável e interativo.
