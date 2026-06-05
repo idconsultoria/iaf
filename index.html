@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IAF — Playroom de Identidade Visual</title>
+  
+  <!-- Google Fonts import specifying all required typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;1,9..40,400&family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="playroom-layout">
+    <!-- Playroom Sidebar Controls -->
+    <aside id="playroom-sidebar">
+      <div class="sidebar-header">
+        <div class="logo-area">
+          <span class="logo-mono">iaf</span>
+          <span class="logo-title">IA que Funciona</span>
+        </div>
+        <p class="sidebar-subtitle">Painel de Identidade Visual</p>
+      </div>
+
+      <!-- Theme Selector -->
+      <section class="control-section">
+        <h3>Direção Visual</h3>
+        <p class="section-desc">Selecione o estilo para ver a aplicação em tempo real:</p>
+        
+        <div class="theme-options">
+          <label class="theme-card active" data-theme="main">
+            <input type="radio" name="theme-selector" value="main" checked>
+            <div class="theme-dot" style="background: var(--teal-main);"></div>
+            <div class="theme-info">
+              <span class="theme-title">O Sintetizador Orgânico</span>
+              <span class="theme-tag">Estilo Principal</span>
+            </div>
+          </label>
+          
+          <div class="divider-text">Variantes Próximas (Mesmo DNA)</div>
+          
+          <label class="theme-card" data-theme="v1">
+            <input type="radio" name="theme-selector" value="v1">
+            <div class="theme-dot" style="background: #00f5c0;"></div>
+            <div class="theme-info">
+              <span class="theme-title">Grade Topográfica</span>
+              <span class="theme-tag">Exploração latente</span>
+            </div>
+          </label>
+          
+          <label class="theme-card" data-theme="v2">
+            <input type="radio" name="theme-selector" value="v2">
+            <div class="theme-dot" style="background: #00f0ff;"></div>
+            <div class="theme-info">
+              <span class="theme-title">Terminal Líquido</span>
+              <span class="theme-tag">Dev-centric / Contraste</span>
+            </div>
+          </label>
+          
+          <label class="theme-card" data-theme="v3">
+            <input type="radio" name="theme-selector" value="v3">
+            <div class="theme-dot" style="background: #4ca6a4;"></div>
+            <div class="theme-info">
+              <span class="theme-title">O Bio-Sinal</span>
+              <span class="theme-tag">Ondas de dados / Suave</span>
+            </div>
+          </label>
+          
+          <div class="divider-text">Variantes Distantes (Caminhos Alternativos)</div>
+          
+          <label class="theme-card" data-theme="v4">
+            <input type="radio" name="theme-selector" value="v4">
+            <div class="theme-dot" style="background: #0d4240;"></div>
+            <div class="theme-info">
+              <span class="theme-title">A Tela Editorial</span>
+              <span class="theme-tag">Light Mode / Sofisticado</span>
+            </div>
+          </label>
+          
+          <label class="theme-card" data-theme="v5">
+            <input type="radio" name="theme-selector" value="v5">
+            <div class="theme-dot" style="background: #ff5500;"></div>
+            <div class="theme-info">
+              <span class="theme-title">O Fluxo Brutalista</span>
+              <span class="theme-tag">Raw / Industrial</span>
+            </div>
+          </label>
+        </div>
+      </section>
+
+      <!-- View Selector -->
+      <section class="control-section">
+        <h3>Visualização</h3>
+        <div class="view-options">
+          <button class="view-btn active" data-view="landing">Landing Page</button>
+          <button class="view-btn" data-view="lab">Projetos Lab</button>
+          <button class="view-btn" data-view="briefing">Briefing de Design</button>
+        </div>
+      </section>
+
+      <!-- Parametric Controls -->
+      <section class="control-section">
+        <h3>Variáveis Paramétricas</h3>
+        <p class="section-desc">Ajuste os traços das curvas orgânicas:</p>
+        
+        <div class="range-control">
+          <label for="speed-range">Velocidade da Linha: <span id="speed-val">1.0x</span></label>
+          <input type="range" id="speed-range" min="0.1" max="3" step="0.1" value="1.0">
+        </div>
+        
+        <div class="range-control">
+          <label for="weight-range">Espessura do Traço: <span id="weight-val">Normal</span></label>
+          <input type="range" id="weight-range" min="0.5" max="5" step="0.5" value="1.5">
+        </div>
+
+        <div class="checkbox-control">
+          <input type="checkbox" id="show-grid" checked>
+          <label for="show-grid">Exibir Linhas de Grade Auxiliares</label>
+        </div>
+      </section>
+      
+      <div class="sidebar-footer">
+        <p>Projeto <strong>IA que Funciona</strong></p>
+        <p>Criado por Antigravity AI</p>
+      </div>
+    </aside>
+
+    <!-- Main Sandbox Container -->
+    <main id="sandbox-viewport" class="theme-main">
+      <!-- Background generative lines canvas -->
+      <canvas id="generative-canvas"></canvas>
+      
+      <!-- Tech Grid Overlay -->
+      <div class="tech-grid" id="bg-grid"></div>
+
+      <!-- VIEW 1: LANDING PAGE -->
+      <div id="view-landing" class="sandbox-view active">
+        <!-- Site Header -->
+        <header class="site-header">
+          <div class="site-logo">
+            <svg class="iaf-logo-svg" viewBox="0 0 100 40" width="100" height="40">
+              <path class="iaf-logo-path" d="M10,30 Q30,10 50,30 T90,10" fill="none" stroke="var(--accent-primary)" stroke-width="2.5" stroke-linecap="round"/>
+              <text x="15" y="22" font-family="var(--font-title)" font-size="10" font-weight="bold" fill="var(--text-primary)" letter-spacing="1">IAF</text>
+            </svg>
+          </div>
+          <nav class="site-nav">
+            <a href="#manifesto" class="nav-link">Manifesto</a>
+            <a href="#projetos" class="nav-link">Projetos</a>
+            <a href="#eventos" class="nav-link">Eventos</a>
+          </nav>
+          <div class="site-actions">
+            <a href="#join" class="btn btn-primary">Entrar na Comunidade</a>
+          </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+          <div class="badge-container">
+            <span class="tech-badge"><span class="pulse-indicator"></span>Estilo Ativo: <strong id="active-style-name">O Sintetizador Orgânico</strong></span>
+          </div>
+          <h1>A inteligência artificial que <span>realmente funciona</span>.</h1>
+          <p class="hero-lead">Construímos pontes entre modelos teóricos e aplicações do mundo real. Uma comunidade brasileira de engenheiros de prompt, desenvolvedores e criadores focados em utilidade pragmática, inovação autêntica e troca direta.</p>
+          <div class="hero-ctas">
+            <a href="#join" class="btn btn-primary btn-large">Fazer Parte Agora</a>
+            <a href="#projetos" class="btn btn-secondary btn-large">Ver Projetos da Comunidade</a>
+          </div>
+        </section>
+
+        <!-- Section Curve transition -->
+        <div class="curve-divider-container">
+          <svg class="divider-curve-svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path class="divider-path" d="M0,50 C360,100 720,0 1080,50 L1440,30 L1440,100 L0,100 Z" fill="var(--bg-secondary)"/>
+            <path class="divider-line" d="M0,50 C360,100 720,0 1080,50 L1440,30" fill="none" stroke="var(--accent-primary)" stroke-width="var(--line-weight)"/>
+          </svg>
+        </div>
+
+        <!-- Section: Manifesto -->
+        <section id="manifesto" class="content-section bg-sec">
+          <div class="section-header">
+            <span class="section-tag">01 / MANIFESTO</span>
+            <h2>Nossos Princípios</h2>
+            <p>Por que existimos e como agimos.</p>
+          </div>
+          
+          <div class="manifesto-grid">
+            <div class="principle-card">
+              <div class="card-number">I.</div>
+              <h3>Pragmatismo Absoluto</h3>
+              <p>Código rodando supera apresentações corporativas. Focamos no que entrega valor real, resolve problemas concretos e funciona fora do ambiente controlado.</p>
+            </div>
+            
+            <div class="principle-card">
+              <div class="card-number">II.</div>
+              <h3>Inovação Audaciosa</h3>
+              <p>Não aceitamos limites pré-estabelecidos. Dobramos os modelos, criamos prompts atípicos e hackeamos arquiteturas para ir além do básico.</p>
+            </div>
+            
+            <div class="principle-card">
+              <div class="card-number">III.</div>
+              <h3>Rede Orgânica</h3>
+              <p>Sem burocracia, sem hierarquias corporativas. Conexões de pessoa para pessoa, aprendizado contínuo guiado por curiosidade e pragmatismo.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section Curve transition -->
+        <div class="curve-divider-container reverse">
+          <svg class="divider-curve-svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path class="divider-path" d="M0,50 C360,0 720,100 1080,30 L1440,50 L1440,100 L0,100 Z" fill="var(--bg-primary)"/>
+            <path class="divider-line" d="M0,50 C360,0 720,100 1080,30 L1440,50" fill="none" stroke="var(--accent-primary)" stroke-width="var(--line-weight)"/>
+          </svg>
+        </div>
+
+        <!-- Section: Featured Projects -->
+        <section id="projetos" class="content-section">
+          <div class="section-header">
+            <span class="section-tag">02 / LABORATÓRIO</span>
+            <h2>Projetos da Comunidade</h2>
+            <p>Soluções reais construídas cooperativamente pelos membros da IAF.</p>
+          </div>
+          
+          <div class="projects-featured-grid">
+            <div class="featured-project-card">
+              <div class="project-preview">
+                <svg class="project-wave-svg" viewBox="0 0 400 150">
+                  <path d="M10,75 Q100,20 200,75 T390,75" fill="none" stroke="var(--accent-primary)" stroke-width="2"/>
+                  <path d="M10,75 Q100,120 200,75 T390,75" fill="none" stroke="var(--accent-hover)" stroke-width="1" stroke-dasharray="5,5"/>
+                </svg>
+              </div>
+              <div class="project-content">
+                <span class="project-meta">open-source // RAG</span>
+                <h3>MyceliumRAG</h3>
+                <p>Mecanismo de busca semântica híbrido que utiliza estruturas de dados inspiradas em redes de micélio para conectar pedaços de conhecimento em grafos fluidos.</p>
+                <div class="project-footer">
+                  <span class="tech-stack">Python + Neo4j</span>
+                  <a href="#lab" class="project-link">Ver Código ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="featured-project-card">
+              <div class="project-preview">
+                <svg class="project-wave-svg" viewBox="0 0 400 150">
+                  <path d="M10,40 C100,120 200,10 390,110" fill="none" stroke="var(--accent-primary)" stroke-width="2.5"/>
+                  <circle cx="200" cy="60" r="6" fill="var(--accent-hover)"/>
+                </svg>
+              </div>
+              <div class="project-content">
+                <span class="project-meta">ferramenta // design</span>
+                <h3>PromptFlow</h3>
+                <p>IDE visual e simplificada para desenvolvimento de fluxos de IA generativa multi-agente baseada inteiramente em grafos direcionados e caminhos curvos.</p>
+                <div class="project-footer">
+                  <span class="tech-stack">TypeScript + React</span>
+                  <a href="#lab" class="project-link">Testar App ↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section: Join Community Form -->
+        <section id="join" class="content-section bg-sec text-center join-section">
+          <div class="form-container">
+            <span class="section-tag">03 / CONEXÃO</span>
+            <h2>Faça parte da IAF</h2>
+            <p>Assine nossa newsletter semanal com experimentos testados em produção e receba convites para nossos meetups mensais de builders.</p>
+            
+            <form class="join-form" onsubmit="event.preventDefault(); alert('Inscrição simulada! Bem-vindo ao fluxo.');">
+              <input type="email" placeholder="Seu email de builder ou pesquisador" required>
+              <button type="submit" class="btn btn-primary">Participar do Fluxo</button>
+            </form>
+            <p class="form-subtext">Sem spam. Apenas código que funciona, prompts testados e insights de quem faz.</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- VIEW 2: PROJECTS LAB (PLAYGROUND) -->
+      <div id="view-lab" class="sandbox-view">
+        <section class="lab-hero">
+          <span class="section-tag">LABORATÓRIO INTERATIVO</span>
+          <h2>Espaço de Experimentos da Comunidade</h2>
+          <p>Onde testamos ideias audaciosas antes de levá-las para produção. Explore os projetos e veja como a identidade visual se adapta a cartões técnicos e visualizações de dados.</p>
+        </section>
+
+        <div class="lab-grid">
+          <!-- Card 1 -->
+          <div class="lab-card">
+            <div class="lab-card-header">
+              <span class="status-badge active">Online</span>
+              <span class="date">04 Jun 2026</span>
+            </div>
+            <h3>Agente de Raciocínio Não-Linear</h3>
+            <p>Framework experimental para encadear prompts complexos em árvores de pensamento que se fundem organicamente, permitindo que a IA recue e retome caminhos produtivos de raciocínio.</p>
+            <div class="lab-metrics">
+              <div class="metric">
+                <span class="metric-label">Precisão</span>
+                <span class="metric-value">94.2%</span>
+              </div>
+              <div class="metric">
+                <span class="metric-label">Latência</span>
+                <span class="metric-value">1.4s</span>
+              </div>
+            </div>
+            <div class="lab-card-actions">
+              <code>iaf-reasoning-v1.2.py</code>
+              <button class="btn btn-small">Rodar CLI</button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="lab-card">
+            <div class="lab-card-header">
+              <span class="status-badge beta">Beta</span>
+              <span class="date">01 Jun 2026</span>
+            </div>
+            <h3>Otimizador de Contexto para LLMs</h3>
+            <p>Compressor de contexto semântico que elimina redundâncias linguísticas em prompts gigantes antes de enviá-los às APIs de IA, economizando até 40% em custos de tokens.</p>
+            <div class="lab-metrics">
+              <div class="metric">
+                <span class="metric-label">Token Savings</span>
+                <span class="metric-value">41.8%</span>
+              </div>
+              <div class="metric">
+                <span class="metric-label">Fidelidade</span>
+                <span class="metric-value">98.9%</span>
+              </div>
+            </div>
+            <div class="lab-card-actions">
+              <code>iaf-compressor.js</code>
+              <button class="btn btn-small">Ver Repositório</button>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="lab-card">
+            <div class="lab-card-header">
+              <span class="status-badge deprecated">Arquivado</span>
+              <span class="date">15 Mai 2026</span>
+            </div>
+            <h3>Sintetizador de Voz com Curva Emocional</h3>
+            <p>Conversor de texto em fala que mapeia nuances de sentimentos expressos no texto em uma curva bezier contínua e a traduz em velocidade e entonação da voz gerada.</p>
+            <div class="lab-metrics">
+              <div class="metric">
+                <span class="metric-label">Emocionalidade</span>
+                <span class="metric-value">7.8/10</span>
+              </div>
+              <div class="metric">
+                <span class="metric-label">Processamento</span>
+                <span class="metric-value">620ms</span>
+              </div>
+            </div>
+            <div class="lab-card-actions">
+              <code>emotional-synth-model</code>
+              <button class="btn btn-small" disabled>Desativado</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Simulated Interactive AI Tool -->
+        <div class="lab-simulator bg-sec">
+          <div class="simulator-controls">
+            <h3>Gerador de Sinais do Espaço Latente</h3>
+            <p>Interaja com o modelo matemático do espaço latente da IAF. Ajuste a frequência das curvas e a distorção caótica para modelar novas ondas neurais.</p>
+            
+            <div class="simulator-slider">
+              <label for="sim-frequency">Frequência da Onda:</label>
+              <input type="range" id="sim-frequency" min="1" max="15" step="0.5" value="5">
+            </div>
+
+            <div class="simulator-slider">
+              <label for="sim-chaos">Distorção (Caos):</label>
+              <input type="range" id="sim-chaos" min="0" max="100" step="5" value="20">
+            </div>
+
+            <button class="btn btn-primary" id="sim-random-btn">Injetar Ruído Caótico</button>
+          </div>
+          <div class="simulator-display">
+            <!-- Simulated Canvas target for the local telemetry wave -->
+            <canvas id="simulator-canvas"></canvas>
+            <div class="simulator-telemetry">
+              <span>Frequência: <strong id="telemetry-freq">5.0Hz</strong></span>
+              <span>Distorção: <strong id="telemetry-chaos">20%</strong></span>
+              <span>Status: <strong class="telemetry-status">Estável</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIEW 3: BRIEFING OF DESIGN -->
+      <div id="view-briefing" class="sandbox-view">
+        <article class="briefing-article">
+          <div class="briefing-header">
+            <span class="section-tag">DOCUMENTAÇÃO OFICIAL</span>
+            <h2>Briefing de Identidade Visual</h2>
+            <p class="briefing-lead">Uma proposta completa de design codificada para refletir a alma prática e inovadora da IAF.</p>
+          </div>
+
+          <div class="briefing-body">
+            <h3>1. O Conceito Central: "O Fluxo Pragmático"</h3>
+            <p>A identidade visual da <strong>IA que Funciona</strong> foge dos padrões corporativos cinzentos e dos exageros saturados das startups tradicionais. Em vez de gradientes amorfos (blobs) e fontes geométricas assépticas, propomos o casamento entre a <strong>rigidez das grades pragmáticas</strong> e o <strong>fluxo contínuo das curvas orgânicas</strong>.</p>
+            
+            <div class="briefing-callout">
+              <p><strong>Filosofia da Identidade:</strong> A tecnologia de IA generativa é fluida e viva. Os processos que a aplicam na prática são estruturados e precisos. As curvas suaves em azul teal cruzando grades retas representam essa intersecção.</p>
+            </div>
+
+            <h3>2. Elementos Gráficos e Acentos</h3>
+            <ul>
+              <li><strong>Azul Teal:</strong> A cor principal da identidade. Une a frieza computacional do azul clássico com o frescor biológico do verde. É uma cor associada a profundidade, precisão e foco.</li>
+              <li><strong>Linhas Curvas Suaves:</strong> Traço marcante da marca. Representam caminhos generativos, tensores e fluxos de pensamento. Elas guiam os olhos através da página, ligando informações e quebrando a rigidez das colunas retangulares.</li>
+              <li><strong>Grade de Fundo (Grid):</strong> Uma malha fina de 1px que evoca a engenharia por trás do design. Mantém o design aterrado, dando o tom pragmático de que a comunidade constrói infraestrutura sólida.</li>
+            </ul>
+
+            <h3>3. Estilo Principal vs. Variantes de Direção</h3>
+            <p>Para fornecer versatilidade ao projeto, mapeamos a identidade em um estilo central e 5 variantes (3 muito próximas e 2 alternativas):</p>
+            
+            <table class="briefing-table">
+              <thead>
+                <tr>
+                  <th>Nome do Estilo</th>
+                  <th>Proximidade</th>
+                  <th>Mudança Principal</th>
+                  <th>Sensação Transmitida</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>O Sintetizador Orgânico</strong></td>
+                  <td>Estilo Principal</td>
+                  <td>Teal Vibrante, Outfit/Inter, Fundo Chumbo.</td>
+                  <td>Inovação focada, técnica elegante.</td>
+                </tr>
+                <tr>
+                  <td><strong>Grade Topográfica</strong></td>
+                  <td>Muito Próximo</td>
+                  <td>Space Grotesk, linhas curvas paralelas sobrepostas.</td>
+                  <td>Exploração e mapeamento técnico.</td>
+                </tr>
+                <tr>
+                  <td><strong>Terminal Líquido</strong></td>
+                  <td>Muito Próximo</td>
+                  <td>JetBrains Mono, Fundo preto puro, neon intenso.</td>
+                  <td>Developer-first, pragmatismo cru, hacker.</td>
+                </tr>
+                <tr>
+                  <td><strong>O Bio-Sinal</strong></td>
+                  <td>Muito Próximo</td>
+                  <td>DM Sans, tons pastel desaturados, curvas senoidais.</td>
+                  <td>Orgânico, telemetria científica, calmo.</td>
+                </tr>
+                <tr>
+                  <td><strong>A Tela Editorial</strong></td>
+                  <td>Alternativo 1</td>
+                  <td>Cormorant Garamond, Light Mode (Creme), massas curvas.</td>
+                  <td>Estúdio conceitual, cultura, design de luxo.</td>
+                </tr>
+                <tr>
+                  <td><strong>O Fluxo Brutalista</strong></td>
+                  <td>Alternativo 2</td>
+                  <td>Syne, bordas grossas de 2px, azul e laranja brilhantes.</td>
+                  <td>Força industrial, ação rápida, autêntico/cru.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3>4. Implementação Paramétrica das Curvas</h3>
+            <p>As curvas nesta interface não são estáticas. Elas são renderizadas de forma generativa através de algoritmos matemáticos (fórmulas de Bézier e ondas trigonométricas) para garantir que cada renderização seja ligeiramente única — exatamente como o comportamento de modelos de linguagem generativos.</p>
+          </div>
+        </article>
+      </div>
+    </main>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
