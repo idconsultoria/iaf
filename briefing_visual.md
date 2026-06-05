@@ -26,6 +26,9 @@ O tom **Azul Teal** é o protagonista. Ele une a seriedade técnica do azul com 
 - **Teal Principal (Accent)**: `#0da69e` (Teal vibrante e profundo, equilibrando luz e sobriedade)
 - **Teal Neon (Highlight)**: `#00ffd5` (Usado para interações críticas, hover e pontos de foco)
 - **Fundo Escuro (Base)**: `#080d0f` (Um cinza-chumbo quase preto, com um toque levemente azulado para evitar o preto absoluto sem vida)
+- **Terracota Quente (Complementar)**: `#e07a5f` (Contraponto quente de terra e cobre, representando o pragmatismo e a ancoragem humana no mundo real)
+- **Verde Musgo (Secundário Orgânico)**: `#8f9e8b` (Representa redes neurais, sinapses, e a maleabilidade das conexões biológicas)
+- **Âmbar Latente (Alerta/Secundário)**: `#ffb700` (Para realces pontuais e estados de telemetria sem poluição visual)
 - **Muted Teal (Suporte)**: `#1c2b30` (Para bordas, cards e elementos secundários)
 - **Off-White (Texto)**: `#f3f6f6` (Para leitura de alto conforto e contraste)
 

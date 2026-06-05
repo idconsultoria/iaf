@@ -37,6 +37,10 @@ As cores da IAF foram selecionadas para criar uma atmosfera de foco imersivo, si
 +-----------------------------------------------------------------------+
 |  #00ffd5 (Teal Neon) -> Energia viva, interações e tomadas de ação    |
 +-----------------------------------------------------------------------+
+|  #e07a5f (Terracota Quente) -> Contraponto de terra, engenharia física|
++-----------------------------------------------------------------------+
+|  #8f9e8b (Verde Musgo) -> Adaptabilidade orgânica, redes de neurônios |
++-----------------------------------------------------------------------+
 ```
 
 *   **Base: `#080d0f` (Chumbo Profundo)**  
@@ -45,6 +49,12 @@ As cores da IAF foram selecionadas para criar uma atmosfera de foco imersivo, si
     O azul representa a estabilidade e a técnica. O verde representa o orgânico e o crescimento. O Teal une o melhor dos dois mundos. É a cor que ancora a nossa marca, usada em títulos secundários, bordas ativas e grafismos de relevo.
 *   **Destaque Vivo: `#00ffd5` (Teal Neon)**  
     A energia do espaço latente da IA. É um ciano esverdeado super saturado, usado cirurgicamente em interações críticas (hover de botões, indicadores de conexões de rede e pontos de foco).
+*   **Contraponto Quente: `#e07a5f` (Terracota)**  
+    Um tom de cobre/terracota fosco e sofisticado. Como oposto complementar no espectro cromático aos tons frios de azul-teal, ele age como um ponto de ancoragem física e humana, representando o pragmatismo da engenharia no "mundo real". Usado para realces pontuais, avisos estruturados ou demarcações de relevo humano.
+*   **Acento de Adaptabilidade: `#8f9e8b` (Verde Musgo/Sage)**  
+    Um verde musgo dessaturado e elegante. Representa a natureza biológica da inteligência artificial (redes neurais, sinapses, adaptabilidade). Serve para detalhamentos secundários que requerem um tom orgânico amigável, mas discreto.
+*   **Alerta Quente: `#ffb700` (Âmbar Latente)**  
+    Utilizado pontualmente para demarcar estados intermediários de computação, tags de aviso neutro ou estados de alerta moderado, sem agredir o contraste visual.
 *   **Suporte: `#0d1519` (Cinza Petróleo Secundário)**  
     Usado para preenchimento de cards, cabeçalhos de tabelas e blocos secundários, criando camadas de profundidade visual sobre o fundo principal.
 *   **Leitura: `#f3f6f6` (Off-White)**  

@@ -40,6 +40,9 @@ body {
   --accent-primary: #0da69e;
   --accent-hover: #00ffd5;
   --accent-muted: rgba(13, 166, 158, 0.12);
+  --accent-terracotta: #e07a5f;
+  --accent-sage: #8f9e8b;
+  --accent-amber: #ffb700;
   --text-primary: #f3f6f6;
   --text-secondary: #8a9d9f;
   --font-title: 'Outfit', sans-serif;
