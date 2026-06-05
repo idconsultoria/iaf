@@ -28,7 +28,7 @@
       --font-title: 'Outfit', sans-serif;
       --font-body: 'Inter', sans-serif;
       --font-code: 'Fira Code', monospace;
-      --shadow-glow: 0 0 25px rgba(13, 166, 158, 0.15);
+      --shadow-glow: 0 0 25px rgba(13, 166, 158, 0.1);
     }
 
     @page {
@@ -74,8 +74,8 @@
       right: 0;
       bottom: 0;
       background-image: 
-        linear-gradient(rgba(13, 166, 158, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(13, 166, 158, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(13, 166, 158, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(13, 166, 158, 0.02) 1px, transparent 1px);
       background-size: 30px 30px;
       pointer-events: none;
       z-index: 1;
@@ -86,7 +86,7 @@
       position: absolute;
       width: 400px;
       height: 400px;
-      background: radial-gradient(circle, rgba(13, 166, 158, 0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(13, 166, 158, 0.05) 0%, transparent 70%);
       top: -100px;
       right: -100px;
       pointer-events: none;
@@ -100,7 +100,7 @@
       left: -10%;
       width: 120%;
       height: auto;
-      opacity: 0.12;
+      opacity: 0.08;
       pointer-events: none;
       z-index: 1;
     }
@@ -111,36 +111,25 @@
     }
 
     /* ==========================================
-       HEADER SECTION
+       HEADER SECTION (SIMPLIFIED)
        ========================================== */
     .header {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 20px;
-      align-items: center;
-      padding-bottom: 35px;
-      margin-bottom: 40px;
-      border-bottom: 1.5px solid var(--accent-primary);
-      position: relative;
-    }
-
-    /* Accent curve overlapping the header border */
-    .header-accent-curve {
-      position: absolute;
-      bottom: -1px;
-      left: 0;
-      width: 100%;
-      height: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 24px;
+      margin-bottom: 36px;
+      border-bottom: 1px solid rgba(13, 166, 158, 0.25);
     }
 
     .header-left {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 16px;
     }
 
     .header-logo-img {
-      height: 52px;
+      height: 46px;
       width: auto;
       display: block;
     }
@@ -153,90 +142,67 @@
     .newsletter-title {
       font-family: var(--font-title);
       font-weight: 900;
-      font-size: 32px;
+      font-size: 28px;
       text-transform: uppercase;
       letter-spacing: -0.5px;
       color: var(--text-primary);
       line-height: 1.1;
-      background: linear-gradient(90deg, var(--text-primary) 50%, var(--accent-primary) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
     }
 
     .newsletter-subtitle {
       font-family: var(--font-body);
       font-size: 11px;
       color: var(--text-secondary);
-      margin-top: 4px;
+      margin-top: 3px;
       font-weight: 400;
     }
 
-    .header-metadata-box {
-      background-color: rgba(4, 7, 9, 0.4);
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-sm);
-      padding: 12px 16px;
+    .header-metadata {
       font-family: var(--font-code);
       font-size: 10px;
-      min-width: 190px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-
-    .meta-row {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 4px;
-    }
-
-    .meta-row:last-child {
-      margin-bottom: 0;
-    }
-
-    .meta-label {
       color: var(--text-secondary);
+      display: flex;
+      gap: 8px;
+      align-items: center;
     }
 
-    .meta-value {
-      color: var(--accent-primary);
-      font-weight: 700;
+    .meta-divider {
+      color: rgba(13, 166, 158, 0.3);
     }
 
-    .meta-value.status-online {
+    .meta-item {
+      font-weight: 500;
+    }
+
+    .meta-item.status-online {
       color: var(--accent-hover);
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
     }
 
-    .meta-value.status-online::before {
+    .meta-item.status-online::before {
       content: '';
       display: inline-block;
-      width: 6px;
-      height: 6px;
+      width: 5px;
+      height: 5px;
       border-radius: 50%;
       background-color: var(--accent-hover);
-      box-shadow: 0 0 8px var(--accent-hover);
-      animation: blink-status 1.5s infinite alternate;
-    }
-
-    @keyframes blink-status {
-      from { opacity: 0.4; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1.1); }
     }
 
     /* ==========================================
        SECTION CONTAINERS & HEADINGS
        ========================================== */
     .section {
-      margin-bottom: 45px;
+      margin-bottom: 36px;
     }
 
     .section-title {
       font-family: var(--font-title);
       font-weight: 700;
-      font-size: 17px;
+      font-size: 16px;
       color: var(--accent-primary);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -255,8 +221,8 @@
     }
 
     .title-icon {
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
       color: var(--accent-primary);
       stroke-width: 2.2;
       flex-shrink: 0;
@@ -273,30 +239,16 @@
        COMPONENT: HOT TAKE SECTION
        ========================================== */
     .hot-take-box {
-      background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(13, 21, 25, 0.5) 100%);
+      background: var(--bg-secondary);
       border: 1px solid var(--border-color);
-      border-left: 4px solid var(--accent-hover);
+      border-left: 3px solid var(--accent-hover);
       border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0;
-      padding: 24px 28px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: var(--shadow-glow);
-    }
-
-    .hot-take-box::after {
-      content: '';
-      position: absolute;
-      bottom: -20px;
-      right: -20px;
-      width: 100px;
-      height: 100px;
-      background: radial-gradient(circle, rgba(0, 255, 213, 0.05) 0%, transparent 80%);
-      pointer-events: none;
+      padding: 20px 24px;
     }
 
     .hot-take-text {
-      font-size: 13.5px;
-      line-height: 1.75;
+      font-size: 13px;
+      line-height: 1.7;
       color: #e2e8e9;
     }
 
@@ -311,42 +263,36 @@
     .news-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 12px;
+      gap: 10px;
     }
 
     .news-item {
       display: flex;
       align-items: flex-start;
-      gap: 14px;
-      padding: 14px 18px;
-      background-color: rgba(13, 21, 25, 0.4);
-      border: 1px solid rgba(13, 166, 158, 0.08);
+      gap: 12px;
+      padding: 10px 14px;
+      background-color: rgba(13, 21, 25, 0.3);
+      border: 1px solid rgba(13, 166, 158, 0.06);
       border-radius: var(--border-radius-sm);
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition: all 0.2s ease;
     }
 
     .news-item:hover {
       background-color: var(--bg-secondary);
       border-color: var(--accent-primary);
-      transform: translateX(4px);
     }
 
     .news-bullet {
       color: var(--accent-primary);
       font-family: var(--font-code);
       font-weight: 700;
-      font-size: 16px;
+      font-size: 14px;
       line-height: 1.0;
       margin-top: 2px;
-      transition: color 0.3s ease;
-    }
-
-    .news-item:hover .news-bullet {
-      color: var(--accent-hover);
     }
 
     .news-text {
-      font-size: 13px;
+      font-size: 12.5px;
       color: #cbd5d6;
       flex-grow: 1;
     }
@@ -358,14 +304,14 @@
 
     .news-tag {
       font-family: var(--font-code);
-      font-size: 9px;
+      font-size: 8.5px;
       font-weight: 700;
       color: var(--accent-primary);
       background-color: var(--accent-muted);
-      border: 1px solid rgba(13, 166, 158, 0.15);
-      padding: 2px 8px;
+      border: 1px solid rgba(13, 166, 158, 0.12);
+      padding: 1px 6px;
       border-radius: 4px;
-      margin-left: 8px;
+      margin-left: 6px;
       text-transform: uppercase;
       display: inline-block;
       vertical-align: middle;
@@ -377,55 +323,51 @@
     .deep-dive-grid {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 16px;
     }
 
     .deep-dive-card {
       background-color: var(--bg-secondary);
       border: 1px solid var(--border-color);
       border-radius: var(--border-radius-lg);
-      padding: 24px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-      position: relative;
+      padding: 20px;
     }
 
     .deep-dive-card:hover {
       border-color: var(--accent-primary);
-      box-shadow: var(--shadow-glow);
     }
 
     .deep-dive-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .deep-dive-title {
       font-family: var(--font-title);
       font-weight: 700;
-      font-size: 16px;
+      font-size: 15px;
       color: var(--text-primary);
     }
 
     .dd-tag {
       font-family: var(--font-code);
-      font-size: 9px;
+      font-size: 8.5px;
       font-weight: 700;
       color: var(--accent-hover);
-      background-color: rgba(0, 255, 213, 0.08);
-      border: 1px solid rgba(0, 255, 213, 0.2);
-      padding: 2px 10px;
+      background-color: rgba(0, 255, 213, 0.06);
+      border: 1px solid rgba(0, 255, 213, 0.15);
+      padding: 2px 8px;
       border-radius: var(--border-radius-sm);
       text-transform: uppercase;
     }
 
     .deep-dive-body {
-      font-size: 13px;
+      font-size: 12.5px;
       color: #b3c2c5;
-      line-height: 1.7;
-      margin-bottom: 18px;
+      line-height: 1.65;
+      margin-bottom: 14px;
     }
 
     .deep-dive-body strong {
@@ -437,13 +379,13 @@
       display: inline-flex;
       align-items: center;
       font-family: var(--font-code);
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 500;
       color: var(--accent-primary);
       text-decoration: none;
-      transition: color 0.3s ease;
-      border-bottom: 1px dashed rgba(13, 166, 158, 0.3);
-      padding-bottom: 2px;
+      transition: color 0.2s ease;
+      border-bottom: 1px dashed rgba(13, 166, 158, 0.2);
+      padding-bottom: 1px;
     }
 
     .deep-dive-link:hover {
@@ -457,59 +399,53 @@
     .app-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 16px;
+      gap: 14px;
     }
 
     .app-card {
-      background-color: rgba(13, 21, 25, 0.5);
+      background-color: rgba(13, 21, 25, 0.3);
       border: 1px solid var(--border-color);
       border-radius: var(--border-radius-lg);
-      padding: 22px 24px;
-      transition: all 0.3s ease;
-    }
-
-    .app-card:hover {
-      border-color: rgba(0, 255, 213, 0.3);
-      background-color: var(--bg-secondary);
+      padding: 18px 20px;
     }
 
     .app-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
-      border-bottom: 1px solid rgba(13, 166, 158, 0.1);
-      padding-bottom: 8px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgba(13, 166, 158, 0.08);
+      padding-bottom: 6px;
     }
 
     .app-source {
       font-family: var(--font-code);
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 700;
       color: var(--accent-hover);
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
     }
 
     .app-title {
       font-family: var(--font-title);
       font-weight: 600;
-      font-size: 15px;
+      font-size: 14px;
       color: var(--text-primary);
     }
 
     .app-desc {
-      font-size: 13px;
+      font-size: 12.5px;
       color: #b8c8cb;
-      line-height: 1.75;
+      line-height: 1.7;
     }
 
     .app-desc code {
       font-family: var(--font-code);
-      font-size: 11px;
+      font-size: 10.5px;
       background-color: #040709;
       color: var(--accent-hover);
-      padding: 1px 5px;
+      padding: 1px 4px;
       border-radius: 4px;
     }
 
@@ -523,19 +459,19 @@
     .community-grid {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
     }
 
     .community-item {
       display: flex;
       align-items: flex-start;
-      gap: 16px;
-      padding: 12px 18px;
-      background-color: rgba(4, 7, 9, 0.3);
-      border: 1px solid rgba(13, 166, 158, 0.06);
+      gap: 12px;
+      padding: 10px 14px;
+      background-color: rgba(4, 7, 9, 0.2);
+      border: 1px solid rgba(13, 166, 158, 0.05);
       border-radius: var(--border-radius-sm);
-      font-size: 12.5px;
-      line-height: 1.6;
+      font-size: 12px;
+      line-height: 1.55;
     }
 
     .community-item strong {
@@ -544,9 +480,9 @@
 
     .community-sentiment {
       font-family: var(--font-code);
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 700;
-      padding: 3px 10px;
+      padding: 2px 8px;
       border-radius: 4px;
       text-transform: uppercase;
       flex-shrink: 0;
@@ -554,111 +490,59 @@
     }
 
     .sentiment-hot {
-      background: rgba(0, 255, 213, 0.08);
+      background: rgba(0, 255, 213, 0.06);
       color: var(--accent-hover);
-      border: 1px solid rgba(0, 255, 213, 0.2);
+      border: 1px solid rgba(0, 255, 213, 0.15);
     }
 
     .sentiment-mixed {
-      background: rgba(255, 183, 0, 0.08);
+      background: rgba(255, 183, 0, 0.06);
       color: #ffb700;
-      border: 1px solid rgba(255, 183, 0, 0.2);
+      border: 1px solid rgba(255, 183, 0, 0.15);
     }
 
     .sentiment-negative {
-      background: rgba(255, 56, 56, 0.08);
+      background: rgba(255, 56, 56, 0.06);
       color: #ff3838;
-      border: 1px solid rgba(255, 56, 56, 0.2);
+      border: 1px solid rgba(255, 56, 56, 0.15);
     }
 
     /* ==========================================
-       FOOTER SECTION
+       FOOTER SECTION (SIMPLIFIED)
        ========================================== */
     .footer {
-      margin-top: 50px;
-      padding-top: 30px;
-      border-top: 1.5px solid var(--border-color);
-      font-family: var(--font-code);
-      font-size: 10px;
-      color: var(--text-secondary);
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .footer-top {
+      margin-top: 45px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(13, 166, 158, 0.2);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      font-family: var(--font-code);
+      font-size: 8.5px;
+      color: #5a6b70;
     }
 
-    .footer-brand-meta {
-      display: flex;
-      align-items: center;
-      gap: 12px;
+    .footer-left {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
-    .footer-logo-img {
-      height: 26px;
-      width: auto;
-      opacity: 0.8;
+    .footer-center {
+      max-width: 420px;
+      text-align: center;
+      line-height: 1.4;
+      color: #4a5a60;
     }
 
-    .footer-sysinfo {
-      display: block;
-      font-size: 8px;
-      color: #5b7175;
-      margin-top: 2px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 16px;
-    }
-
-    .footer-links a {
+    .footer-right a {
       color: var(--accent-primary);
       text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
+      transition: color 0.2s ease;
     }
 
-    .footer-links a:hover {
+    .footer-right a:hover {
       color: var(--accent-hover);
-    }
-
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px solid rgba(13, 166, 158, 0.08);
-      padding-top: 12px;
-      color: #5b7175;
-    }
-
-    .footer-sources {
-      max-width: 500px;
-      line-height: 1.4;
-    }
-
-    .footer-license {
-      font-size: 9px;
-      text-align: right;
-    }
-
-    /* Dynamic line decorations representing the organic curves */
-    .section-curve-svg {
-      width: 100%;
-      height: 20px;
-      margin-top: 30px;
-      margin-bottom: 20px;
-    }
-
-    .section-curve-svg path {
-      fill: none;
-      stroke: var(--accent-primary);
-      stroke-width: 1.5;
-      opacity: 0.3;
     }
   </style>
 </head>
@@ -675,7 +559,7 @@
     <defs>
       <linearGradient id="teal-grad" x1="0%" y1="0%" x2="100%" y2="0%">
         <stop offset="0%" stop-color="#080d0f" stop-opacity="0" />
-        <stop offset="50%" stop-color="#0da69e" stop-opacity="0.3" />
+        <stop offset="50%" stop-color="#0da69e" stop-opacity="0.2" />
         <stop offset="100%" stop-color="#080d0f" stop-opacity="0" />
       </linearGradient>
     </defs>
@@ -688,7 +572,7 @@
          ========================================== -->
     <header class="header">
       <div class="header-left">
-        <!-- Brand generated PNG logo -->
+        <!-- New minimalist generated PNG logo -->
         <img src="iaf_logo.png" alt="IAF Logo" class="header-logo-img">
         <div class="header-title-group">
           <h1 class="newsletter-title">Manhã Aumentada</h1>
@@ -696,17 +580,15 @@
         </div>
       </div>
       
-      <div class="header-metadata-box">
-        <div class="meta-row"><span class="meta-label">ID:</span> <span class="meta-value">ED. DIÁRIA</span></div>
-        <div class="meta-row"><span class="meta-label">DATA:</span> <span class="meta-value">05 JUN 2026</span></div>
-        <div class="meta-row"><span class="meta-label">HORA:</span> <span class="meta-value">07:50 UTC</span></div>
-        <div class="meta-row"><span class="meta-label">SYS:</span> <span class="meta-value status-online">CONECTADO</span></div>
+      <div class="header-metadata">
+        <span class="meta-item">Edição Diária</span>
+        <span class="meta-divider">/</span>
+        <span class="meta-item">05/06/2026</span>
+        <span class="meta-divider">/</span>
+        <span class="meta-item">07:50 UTC</span>
+        <span class="meta-divider">/</span>
+        <span class="meta-item status-online">Conectado</span>
       </div>
-      
-      <!-- Overlapping accent curve -->
-      <svg class="header-accent-curve" viewBox="0 0 800 10" preserveAspectRatio="none">
-        <path d="M0,5 Q200,9 400,2 T800,5" fill="none" stroke="var(--accent-hover)" stroke-width="1.5" />
-      </svg>
     </header>
 
     <!-- ==========================================
@@ -726,15 +608,10 @@
       <div class="hot-take-box">
         <p class="hot-take-text">
           <strong>US$ 2,5 trilhões em gastos com IA em 2026. 95% com zero retorno mensurável.</strong> O dado do MIT NANDA Initiative ecoou esta semana como um sino de igreja num prédio em chamas: enquanto a indústria comemora a Anthropic abrindo IPO a quase US$ 1 trilhão, quem está na trincheira dos projetos reais vê um abismo entre o hype e a entrega. Não é que a IA não funcione — é que <strong>73% do trabalho de engenharia pra colocar IA em produção não tem nada a ver com o modelo</strong>. Data pipelines, integração com legados, tooling de human-in-the-loop. As empresas gastam 70% do budget no modelo e 30% na infraestrutura. Projetos que <em>shipam</em> de verdade invertem essa proporção.<br><br>
-          A pergunta que fica — e que ninguém nos keynotes responde — é: <strong>você está construindo pra parecer inteligente ou pra entregar valor?</strong> Porque 14% de taxa de erro em dados de treinamento, US$ 920 mil in engenharia sem kill criteria e 11 meses sem entregar nada não é um problema de IA. É um problema de gestão.
+          A pergunta que fica — e que ninguém nos keynotes responde — é: <strong>você está construindo pra parecer inteligente ou pra entregar valor?</strong> Porque 14% de taxa de erro em dados de treinamento, US$ 920 mil em engenharia sem kill criteria e 11 meses sem entregar nada não é um problema de IA. É um problema de gestão.
         </p>
       </div>
     </section>
-
-    <!-- Curve divider -->
-    <svg class="section-curve-svg" viewBox="0 0 800 20" preserveAspectRatio="none">
-      <path d="M0,10 C200,2 600,18 800,10" />
-    </svg>
 
     <!-- ==========================================
          RADAR DE NOTÍCIAS SECTION
@@ -819,11 +696,6 @@
       </div>
     </section>
 
-    <!-- Curve divider -->
-    <svg class="section-curve-svg" viewBox="0 0 800 20" preserveAspectRatio="none">
-      <path d="M0,10 C150,18 450,2 800,10" />
-    </svg>
-
     <!-- ==========================================
          DEEP DIVE SECTION
          ========================================== -->
@@ -879,11 +751,6 @@
       </div>
     </section>
 
-    <!-- Curve divider -->
-    <svg class="section-curve-svg" viewBox="0 0 800 20" preserveAspectRatio="none">
-      <path d="M0,10 C300,18 500,2 800,10" />
-    </svg>
-
     <!-- ==========================================
          APLICAÇÃO PRÁTICA SECTION
          ========================================== -->
@@ -934,17 +801,12 @@
             <h3 class="app-title">Second Brain Organizer</h3>
           </div>
           <p class="app-desc">
-            <em>"Vou colar minhas anotações, ideias e pensamentos abaixo. Seu trabalho é: (1) identificar temas centrais e agrupar, (2) transformar bullets bagunçados in itens acionáveis, (3) destacar as 3 ideias mais importantes, (4) sugerir conexões entre ideias, (5) criar um resumo organizado."</em><br>
+            <em>"Vou colar minhas anotações, ideias e pensamentos abaixo. Seu trabalho é: (1) identificar temas centrais e agrupar, (2) transformar bullets bagunçados em itens acionáveis, (3) destacar as 3 ideias mais importantes, (4) sugerir conexões entre ideias, (5) criar um resumo organizado."</em><br>
             Fonte: <strong>r/ChatGPT</strong> — um dos prompts mais votados da semana.
           </p>
         </div>
       </div>
     </section>
-
-    <!-- Curve divider -->
-    <svg class="section-curve-svg" viewBox="0 0 800 20" preserveAspectRatio="none">
-      <path d="M0,10 C200,2 600,18 800,10" />
-    </svg>
 
     <!-- ==========================================
          PULSO DA COMUNIDADE SECTION
@@ -997,26 +859,14 @@
          FOOTER
          ========================================== -->
     <footer class="footer">
-      <div class="footer-top">
-        <div class="footer-brand-meta">
-          <img src="iaf_logo.png" alt="IAF Logo" class="footer-logo-img">
-          <div>
-            <span class="footer-signature">IAF — IA que Funciona</span>
-            <span class="footer-sysinfo">PROTOCOL: LATENT_SYNC_v1.4</span>
-          </div>
-        </div>
-        <div class="footer-links">
-          <a href="https://github.com/idconsultoria/iaf" target="_blank">iaf://github</a>
-          <a href="https://hermes-agent.nousresearch.com" target="_blank">iaf://hermes-agent</a>
-        </div>
+      <div class="footer-left">
+        <span>IAF — IA que Funciona</span>
       </div>
-      <div class="footer-bottom">
-        <div class="footer-sources">
-          Fontes: The Rundown, Superhuman AI, HN, Reddit, Reuters, MIT News, VentureBeat
-        </div>
-        <div class="footer-license">
-          Licença MIT — Código Livre
-        </div>
+      <div class="footer-center">
+        Fontes: The Rundown, Superhuman AI, HN, Reddit, Reuters, MIT News, VentureBeat
+      </div>
+      <div class="footer-right">
+        <a href="https://hermes-agent.nousresearch.com" target="_blank">Gerado por Hermes Agent</a>
       </div>
     </footer>
 
