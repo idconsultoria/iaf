@@ -145,7 +145,9 @@
       font-size: 28px;
       text-transform: uppercase;
       letter-spacing: -0.5px;
-      color: var(--text-primary);
+      background: linear-gradient(90deg, var(--text-primary) 30%, var(--accent-hover) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       line-height: 1.1;
     }
 
@@ -236,14 +238,27 @@
       color: var(--accent-primary);
       stroke-width: 2.2;
       flex-shrink: 0;
+      transition: color 0.3s ease;
     }
+
+    .title-icon.icon-editorial { color: var(--accent-hover); }
+    .title-icon.icon-radar { color: #38bdf8; }
+    .title-icon.icon-deep-dive { color: #c084fc; }
+    .title-icon.icon-app { color: #ffb700; }
+    .title-icon.icon-telemetry { color: #ff3838; }
 
     /* Linear divider that fades out */
     .section-title .line {
       flex-grow: 1;
       height: 1px;
-      background: linear-gradient(90deg, rgba(13, 166, 158, 0.4), transparent);
+      transition: background 0.3s ease;
     }
+
+    .section-title .line.line-editorial { background: linear-gradient(90deg, rgba(0, 255, 213, 0.3), transparent); }
+    .section-title .line.line-radar { background: linear-gradient(90deg, rgba(56, 189, 248, 0.3), transparent); }
+    .section-title .line.line-deep-dive { background: linear-gradient(90deg, rgba(192, 132, 252, 0.3), transparent); }
+    .section-title .line.line-app { background: linear-gradient(90deg, rgba(255, 183, 0, 0.3), transparent); }
+    .section-title .line.line-telemetry { background: linear-gradient(90deg, rgba(255, 56, 56, 0.3), transparent); }
 
     /* ==========================================
        COMPONENT: HOT TAKE SECTION
@@ -255,6 +270,14 @@
       border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0;
       padding: 20px 24px;
       box-shadow: 0 4px 20px rgba(13, 166, 158, 0.04);
+      transition: all 0.3s ease;
+    }
+
+    .hot-take-box:hover {
+      border-color: rgba(13, 166, 158, 0.4);
+      border-left-color: var(--accent-hover);
+      background: linear-gradient(135deg, rgba(13, 166, 158, 0.1) 0%, rgba(13, 21, 25, 0.6) 100%);
+      box-shadow: 0 8px 30px rgba(13, 166, 158, 0.08);
     }
 
     .hot-take-text {
@@ -285,22 +308,29 @@
       background-color: rgba(13, 21, 25, 0.3);
       border: 1px solid rgba(13, 166, 158, 0.06);
       border-radius: var(--border-radius-sm);
-      transition: all 0.2s ease;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
-    .news-item:hover {
-      background-color: var(--bg-secondary);
-      border-color: var(--accent-primary);
-    }
+    .news-item.news-business:hover { border-color: rgba(255, 183, 0, 0.35); background-color: rgba(255, 183, 0, 0.02); }
+    .news-item.news-tech:hover { border-color: rgba(0, 255, 213, 0.35); background-color: rgba(0, 255, 213, 0.02); }
+    .news-item.news-design:hover { border-color: rgba(192, 132, 252, 0.35); background-color: rgba(192, 132, 252, 0.02); }
+    .news-item.news-infra:hover { border-color: rgba(56, 189, 248, 0.35); background-color: rgba(56, 189, 248, 0.02); }
+    .news-item.news-policy:hover { border-color: rgba(255, 124, 124, 0.35); background-color: rgba(255, 124, 124, 0.02); }
 
     .news-bullet {
-      color: var(--accent-hover);
       font-family: var(--font-code);
       font-weight: 700;
       font-size: 14px;
       line-height: 1.0;
       margin-top: 2px;
+      transition: color 0.3s ease;
     }
+
+    .news-bullet.bullet-business { color: #ffb700; }
+    .news-bullet.bullet-tech { color: var(--accent-hover); }
+    .news-bullet.bullet-design { color: #c084fc; }
+    .news-bullet.bullet-infra { color: #38bdf8; }
+    .news-bullet.bullet-policy { color: #ff7c7c; }
 
     .news-text {
       font-size: 12.5px;
@@ -317,15 +347,39 @@
       font-family: var(--font-code);
       font-size: 8.5px;
       font-weight: 700;
-      color: var(--accent-primary);
-      background-color: var(--accent-muted);
-      border: 1px solid rgba(13, 166, 158, 0.12);
       padding: 1px 6px;
       border-radius: 4px;
       margin-left: 6px;
       text-transform: uppercase;
       display: inline-block;
       vertical-align: middle;
+      transition: all 0.3s ease;
+    }
+
+    .news-tag.tag-business {
+      color: #ffb700;
+      background-color: rgba(255, 183, 0, 0.08);
+      border: 1px solid rgba(255, 183, 0, 0.2);
+    }
+    .news-tag.tag-tech {
+      color: var(--accent-hover);
+      background-color: rgba(0, 255, 213, 0.08);
+      border: 1px solid rgba(0, 255, 213, 0.2);
+    }
+    .news-tag.tag-design {
+      color: #c084fc;
+      background-color: rgba(192, 132, 252, 0.08);
+      border: 1px solid rgba(192, 132, 252, 0.2);
+    }
+    .news-tag.tag-infra {
+      color: #38bdf8;
+      background-color: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+    .news-tag.tag-policy {
+      color: #ff7c7c;
+      background-color: rgba(255, 124, 124, 0.08);
+      border: 1px solid rgba(255, 124, 124, 0.2);
     }
 
     /* ==========================================
@@ -342,10 +396,22 @@
       border: 1px solid var(--border-color);
       border-radius: var(--border-radius-lg);
       padding: 20px;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
-    .deep-dive-card:hover {
-      border-color: var(--accent-primary);
+    .deep-dive-card.card-analysis:hover {
+      border-color: var(--accent-hover);
+      box-shadow: 0 8px 30px rgba(0, 255, 213, 0.1);
+    }
+
+    .deep-dive-card.card-product:hover {
+      border-color: #00f0ff;
+      box-shadow: 0 8px 30px rgba(0, 240, 255, 0.1);
+    }
+
+    .deep-dive-card.card-community:hover {
+      border-color: #4ca6a4;
+      box-shadow: 0 8px 30px rgba(76, 166, 164, 0.1);
     }
 
     .deep-dive-header {
@@ -433,7 +499,27 @@
       border: 1px solid var(--border-color);
       border-radius: var(--border-radius-lg);
       padding: 18px 20px;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
+
+    .app-card.app-tutorial:hover {
+      border-color: var(--accent-hover);
+      box-shadow: 0 8px 30px rgba(0, 255, 213, 0.08);
+    }
+
+    .app-card.app-academy:hover {
+      border-color: #ffb700;
+      box-shadow: 0 8px 30px rgba(255, 183, 0, 0.08);
+    }
+
+    .app-card.app-prompt:hover {
+      border-color: #38bdf8;
+      box-shadow: 0 8px 30px rgba(56, 189, 248, 0.08);
+    }
+
+    .app-card.app-tutorial .app-source { color: var(--accent-hover); }
+    .app-card.app-academy .app-source { color: #ffb700; }
+    .app-card.app-prompt .app-source { color: #38bdf8; }
 
     .app-header {
       display: flex;
@@ -448,9 +534,9 @@
       font-family: var(--font-code);
       font-size: 9.5px;
       font-weight: 700;
-      color: var(--accent-hover);
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      transition: color 0.3s ease;
     }
 
     .app-title {
@@ -620,12 +706,12 @@
     <section class="section">
       <div class="section-title">
         <span>
-          <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="title-icon icon-editorial" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
             <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
           </svg>
           Editorial // Hot Take
         </span>
-        <div class="line"></div>
+        <div class="line line-editorial"></div>
       </div>
       
       <div class="hot-take-box">
@@ -642,78 +728,78 @@
     <section class="section">
       <div class="section-title">
         <span>
-          <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="title-icon icon-radar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10" />
             <path d="M12 12L16 8" />
             <path d="M12 6a6 6 0 0 1 6 6" />
           </svg>
           Radar de Notícias
         </span>
-        <div class="line"></div>
+        <div class="line line-radar"></div>
       </div>
       
       <div class="news-grid">
-        <div class="news-item">
-          <span class="news-bullet">▸</span>
+        <div class="news-item news-business">
+          <span class="news-bullet bullet-business">▸</span>
           <p class="news-text">
             <strong>Anthropic protocola IPO</strong> — Valuation de ~US$ 965B na Série H. Receita mensal estimada em US$ 47B. OpenAI deve seguir o mesmo caminho.
-            <span class="news-tag">IPO</span>
+            <span class="news-tag tag-business">IPO</span>
           </p>
         </div>
         
-        <div class="news-item">
-          <span class="news-bullet">▸</span>
+        <div class="news-item news-tech">
+          <span class="news-bullet bullet-tech">▸</span>
           <p class="news-text">
             <strong>OpenAI Dreaming V3</strong> — ChatGPT ganha memória auto-sintetizante. Redução de ~5x no custo computacional. Disponível para Plus/Pro.
-            <span class="news-tag">Memória</span>
+            <span class="news-tag tag-tech">Memória</span>
           </p>
         </div>
         
-        <div class="news-item">
-          <span class="news-bullet">▸</span>
+        <div class="news-item news-design">
+          <span class="news-bullet bullet-design">▸</span>
           <p class="news-text">
             <strong>Ideogram 4.0 open-source</strong> — 9.3B params, DiT single-stream, #1 em modelos abertos no DesignArena. Reve 2.0 também lança com edição por layout.
-            <span class="news-tag">Imagem</span>
+            <span class="news-tag tag-design">Imagem</span>
           </p>
         </div>
         
-        <div class="news-item">
-          <span class="news-bullet">▸</span>
+        <div class="news-item news-infra">
+          <span class="news-bullet bullet-infra">▸</span>
           <p class="news-text">
             <strong>NVIDIA RTX Spark</strong> — Superchip Arm para laptops. Jensen Huang quer "reinventar o PC". Parceria com Microsoft.
-            <span class="news-tag">Hardware</span>
+            <span class="news-tag tag-infra">Hardware</span>
           </p>
         </div>
         
-        <div class="news-item">
-          <span class="news-bullet">▸</span>
+        <div class="news-item news-policy">
+          <span class="news-bullet bullet-policy">▸</span>
           <p class="news-text">
             <strong>Great American AI Act</strong> — Minuta de 269 páginas no Congresso dos EUA. Pré-empção de leis estaduais por 3 anos. US$ 100M/ano para centro de padrões.
-            <span class="news-tag">Regulação</span>
+            <span class="news-tag tag-policy">Regulação</span>
           </p>
         </div>
         
-        <div class="news-item">
-          <span class="news-bullet">▸</span>
+        <div class="news-item news-tech">
+          <span class="news-bullet bullet-tech">▸</span>
           <p class="news-text">
             <strong>Claude Opus 4.8 disponível</strong> — 69.2% no SWE-bench Pro. Anthropic afirma progresso em direção à auto-melhoria recursiva.
-            <span class="news-tag">Modelos</span>
+            <span class="news-tag tag-tech">Modelos</span>
           </p>
         </div>
         
-        <div class="news-item">
-          <span class="news-bullet">▸</span>
+        <div class="news-item news-business">
+          <span class="news-bullet bullet-business">▸</span>
           <p class="news-text">
             <strong>ChatGPT atinge 1B MAU</strong> — App mais rápido da história a atingir a marca. Mais rápido que TikTok, Instagram e YouTube.
-            <span class="news-tag">Marcos</span>
+            <span class="news-tag tag-business">Marcos</span>
           </p>
         </div>
         
-        <div class="news-item">
-          <span class="news-bullet">▸</span>
+        <div class="news-item news-business">
+          <span class="news-bullet bullet-business">▸</span>
           <p class="news-text">
             <strong>Microsoft Build 2026</strong> — 7 modelos MAI internos, agente Scout (OpenClaw-style), chip quântico Majorana 2, Project Solara.
-            <span class="news-tag">Enterprise</span>
+            <span class="news-tag tag-business">Enterprise</span>
           </p>
         </div>
       </div>
@@ -725,19 +811,19 @@
     <section class="section">
       <div class="section-title">
         <span>
-          <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="title-icon icon-deep-dive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10" />
             <circle cx="12" cy="12" r="6" />
             <circle cx="12" cy="12" r="2" />
           </svg>
           Análise // Deep Dive
         </span>
-        <div class="line"></div>
+        <div class="line line-deep-dive"></div>
       </div>
 
       <div class="deep-dive-grid">
         <!-- Card 1 -->
-        <div class="deep-dive-card">
+        <div class="deep-dive-card card-analysis">
           <div class="deep-dive-header">
             <h3 class="deep-dive-title">O abismo de US$ 2,5 tri</h3>
             <span class="dd-tag tag-analysis">Análise</span>
@@ -749,7 +835,7 @@
         </div>
 
         <!-- Card 2 -->
-        <div class="deep-dive-card">
+        <div class="deep-dive-card card-product">
           <div class="deep-dive-header">
             <h3 class="deep-dive-title">Imagem do futuro: layout editing chegou</h3>
             <span class="dd-tag tag-product">Produto</span>
@@ -761,7 +847,7 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="deep-dive-card">
+        <div class="deep-dive-card card-community">
           <div class="deep-dive-header">
             <h3 class="deep-dive-title">O Claude que não quer trabalhar</h3>
             <span class="dd-tag tag-community">Comunidade</span>
@@ -780,17 +866,17 @@
     <section class="section">
       <div class="section-title">
         <span>
-          <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="title-icon icon-app" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
             <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
           </svg>
           Aplicação Prática
         </span>
-        <div class="line"></div>
+        <div class="line line-app"></div>
       </div>
 
       <div class="app-grid">
         <!-- App 1 -->
-        <div class="app-card">
+        <div class="app-card app-tutorial">
           <div class="app-header">
             <span class="app-source">📖 The Rundown — Tutorial</span>
             <h3 class="app-title">Automatize seu calendário com Manus</h3>
@@ -804,7 +890,7 @@
         </div>
 
         <!-- App 2 -->
-        <div class="app-card">
+        <div class="app-card app-academy">
           <div class="app-header">
             <span class="app-source">🧠 Superhuman — AI Academy</span>
             <h3 class="app-title">Crie seu digital twin com Gemini Omni</h3>
@@ -818,7 +904,7 @@
         </div>
 
         <!-- App 3 -->
-        <div class="app-card">
+        <div class="app-card app-prompt">
           <div class="app-header">
             <span class="app-source">🐦 Reddit — Dica de Prompt</span>
             <h3 class="app-title">Second Brain Organizer</h3>
@@ -837,12 +923,12 @@
     <section class="section">
       <div class="section-title">
         <span>
-          <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="title-icon icon-telemetry" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
           </svg>
           Telemetria // Pulso da Comunidade
         </span>
-        <div class="line"></div>
+        <div class="line line-telemetry"></div>
       </div>
       
       <div class="community-grid">
