@@ -223,6 +223,7 @@
       gap: 10px;
       text-transform: uppercase;
       letter-spacing: 1px;
+      transition: color 0.2s ease;
     }
 
     .section-title span {
@@ -241,6 +242,7 @@
       color: var(--accent-hover);
       stroke-width: 2.2;
       flex-shrink: 0;
+      transition: color 0.2s ease;
     }
 
     /* Linear divider that fades out */
@@ -248,6 +250,47 @@
       flex-grow: 1;
       height: 1px;
       background: linear-gradient(90deg, rgba(13, 166, 158, 0.3), transparent);
+    }
+
+    /* Section Title Color Variants */
+    .section-title.title-sage {
+      color: var(--accent-sage);
+    }
+    .section-title.title-sage .title-icon {
+      color: var(--accent-sage);
+    }
+    .section-title.title-sage .line {
+      background: linear-gradient(90deg, rgba(143, 158, 139, 0.3), transparent);
+    }
+
+    .section-title.title-terracotta {
+      color: var(--accent-terracotta);
+    }
+    .section-title.title-terracotta .title-icon {
+      color: var(--accent-terracotta);
+    }
+    .section-title.title-terracotta .line {
+      background: linear-gradient(90deg, rgba(224, 122, 95, 0.3), transparent);
+    }
+
+    .section-title.title-neon {
+      color: var(--accent-hover);
+    }
+    .section-title.title-neon .title-icon {
+      color: var(--accent-hover);
+    }
+    .section-title.title-neon .line {
+      background: linear-gradient(90deg, rgba(0, 255, 213, 0.3), transparent);
+    }
+
+    .section-title.title-amber {
+      color: var(--accent-amber);
+    }
+    .section-title.title-amber .title-icon {
+      color: var(--accent-amber);
+    }
+    .section-title.title-amber .line {
+      background: linear-gradient(90deg, rgba(255, 183, 0, 0.3), transparent);
     }
 
     /* ==========================================
@@ -659,7 +702,7 @@
     <header class="header">
       <div class="header-left">
         <!-- New minimalist generated PNG logo -->
-        <img src="iaf_logo.png" alt="IAF Logo" class="header-logo-img">
+        <img src="iaf_logo_mono.png" alt="IAF Logo" class="header-logo-img">
         <div class="header-title-group">
           <h1 class="newsletter-title">Manhã Aumentada</h1>
           <span class="newsletter-subtitle">A dose diária de conhecimento do profissional aumentado por IA</span>
@@ -699,7 +742,7 @@
          RADAR DE NOTÍCIAS SECTION
          ========================================== -->
     <section class="section">
-      <div class="section-title">
+      <div class="section-title title-sage">
         <span>
           <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10" />
@@ -782,7 +825,7 @@
          DEEP DIVE SECTION
          ========================================== -->
     <section class="section">
-      <div class="section-title">
+      <div class="section-title title-terracotta">
         <span>
           <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10" />
@@ -837,7 +880,7 @@
          APLICAÇÃO PRÁTICA SECTION
          ========================================== -->
     <section class="section">
-      <div class="section-title">
+      <div class="section-title title-neon">
         <span>
           <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
             <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
@@ -894,7 +937,7 @@
          PULSO DA COMUNIDADE SECTION
          ========================================== -->
     <section class="section">
-      <div class="section-title">
+      <div class="section-title title-amber">
         <span>
           <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
