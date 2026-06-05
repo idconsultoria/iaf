@@ -339,6 +339,31 @@
       text-transform: uppercase;
       display: inline-block;
       vertical-align: middle;
+      transition: all 0.2s ease;
+    }
+
+    .news-tag.tag-biz {
+      color: var(--accent-terracotta);
+      background-color: rgba(224, 122, 95, 0.08);
+      border-color: rgba(224, 122, 95, 0.2);
+    }
+
+    .news-tag.tag-creative {
+      color: var(--accent-sage);
+      background-color: rgba(143, 158, 139, 0.08);
+      border-color: rgba(143, 158, 139, 0.2);
+    }
+
+    .news-tag.tag-alert {
+      color: var(--accent-amber);
+      background-color: rgba(255, 183, 0, 0.08);
+      border-color: rgba(255, 183, 0, 0.2);
+    }
+
+    .news-tag.tag-tech {
+      color: var(--accent-hover);
+      background-color: rgba(0, 255, 213, 0.06);
+      border-color: rgba(0, 255, 213, 0.15);
     }
 
     /* ==========================================
@@ -387,21 +412,21 @@
     }
 
     .dd-tag.tag-analysis {
-      color: var(--accent-hover);
-      background-color: rgba(0, 255, 213, 0.06);
-      border: 1px solid rgba(0, 255, 213, 0.15);
+      color: var(--accent-terracotta);
+      background-color: rgba(224, 122, 95, 0.08);
+      border: 1px solid rgba(224, 122, 95, 0.2);
     }
 
     .dd-tag.tag-product {
-      color: var(--accent-primary);
-      background-color: rgba(13, 166, 158, 0.06);
-      border: 1px solid rgba(13, 166, 158, 0.15);
+      color: var(--accent-sage);
+      background-color: rgba(143, 158, 139, 0.08);
+      border: 1px solid rgba(143, 158, 139, 0.2);
     }
 
     .dd-tag.tag-community {
-      color: var(--text-secondary);
-      background-color: rgba(138, 157, 159, 0.06);
-      border: 1px solid rgba(138, 157, 159, 0.15);
+      color: var(--accent-amber);
+      background-color: rgba(255, 183, 0, 0.08);
+      border: 1px solid rgba(255, 183, 0, 0.2);
     }
 
     .deep-dive-body {
@@ -449,11 +474,24 @@
       border-radius: var(--border-radius-lg);
       padding: 18px 20px;
       transition: all 0.2s ease;
+      border-left: 3px solid var(--accent-primary);
     }
 
     .app-card:hover {
       border-color: var(--accent-primary);
       box-shadow: var(--shadow-glow);
+    }
+
+    .app-card.card-sage {
+      border-left: 3px solid var(--accent-sage);
+    }
+
+    .app-card.card-terracotta {
+      border-left: 3px solid var(--accent-terracotta);
+    }
+
+    .app-card.card-amber {
+      border-left: 3px solid var(--accent-amber);
     }
 
     .app-header {
@@ -538,21 +576,21 @@
     }
 
     .sentiment-hot {
-      background: rgba(0, 255, 213, 0.06);
-      color: var(--accent-hover);
-      border: 1px solid rgba(0, 255, 213, 0.15);
+      background: rgba(224, 122, 95, 0.08);
+      color: var(--accent-terracotta);
+      border: 1px solid rgba(224, 122, 95, 0.2);
     }
 
     .sentiment-mixed {
-      background: rgba(138, 157, 159, 0.06);
-      color: var(--text-secondary);
-      border: 1px solid rgba(138, 157, 159, 0.15);
+      background: rgba(143, 158, 139, 0.08);
+      color: var(--accent-sage);
+      border: 1px solid rgba(143, 158, 139, 0.2);
     }
 
     .sentiment-negative {
-      background: rgba(13, 166, 158, 0.06);
-      color: var(--accent-primary);
-      border: 1px solid rgba(13, 166, 158, 0.15);
+      background: rgba(255, 183, 0, 0.08);
+      color: var(--accent-amber);
+      border: 1px solid rgba(255, 183, 0, 0.2);
     }
 
     /* ==========================================
@@ -678,7 +716,7 @@
           <span class="news-bullet">▸</span>
           <p class="news-text">
             <strong>Anthropic protocola IPO</strong> — Valuation de ~US$ 965B na Série H. Receita mensal estimada em US$ 47B. OpenAI deve seguir o mesmo caminho.
-            <span class="news-tag">IPO</span>
+            <span class="news-tag tag-biz">IPO</span>
           </p>
         </div>
         
@@ -686,7 +724,7 @@
           <span class="news-bullet">▸</span>
           <p class="news-text">
             <strong>OpenAI Dreaming V3</strong> — ChatGPT ganha memória auto-sintetizante. Redução de ~5x no custo computacional. Disponível para Plus/Pro.
-            <span class="news-tag">Memória</span>
+            <span class="news-tag tag-tech">Memória</span>
           </p>
         </div>
         
@@ -694,7 +732,7 @@
           <span class="news-bullet">▸</span>
           <p class="news-text">
             <strong>Ideogram 4.0 open-source</strong> — 9.3B params, DiT single-stream, #1 em modelos abertos no DesignArena. Reve 2.0 também lança com edição por layout.
-            <span class="news-tag">Imagem</span>
+            <span class="news-tag tag-creative">Imagem</span>
           </p>
         </div>
         
@@ -702,7 +740,7 @@
           <span class="news-bullet">▸</span>
           <p class="news-text">
             <strong>NVIDIA RTX Spark</strong> — Superchip Arm para laptops. Jensen Huang quer "reinventar o PC". Parceria com Microsoft.
-            <span class="news-tag">Hardware</span>
+            <span class="news-tag tag-tech">Hardware</span>
           </p>
         </div>
         
@@ -710,7 +748,7 @@
           <span class="news-bullet">▸</span>
           <p class="news-text">
             <strong>Great American AI Act</strong> — Minuta de 269 páginas no Congresso dos EUA. Pré-empção de leis estaduais por 3 anos. US$ 100M/ano para centro de padrões.
-            <span class="news-tag">Regulação</span>
+            <span class="news-tag tag-biz">Regulação</span>
           </p>
         </div>
         
@@ -718,7 +756,7 @@
           <span class="news-bullet">▸</span>
           <p class="news-text">
             <strong>Claude Opus 4.8 disponível</strong> — 69.2% no SWE-bench Pro. Anthropic afirma progresso em direção à auto-melhoria recursiva.
-            <span class="news-tag">Modelos</span>
+            <span class="news-tag tag-tech">Modelos</span>
           </p>
         </div>
         
@@ -726,7 +764,7 @@
           <span class="news-bullet">▸</span>
           <p class="news-text">
             <strong>ChatGPT atinge 1B MAU</strong> — App mais rápido da história a atingir a marca. Mais rápido que TikTok, Instagram e YouTube.
-            <span class="news-tag">Marcos</span>
+            <span class="news-tag tag-alert">Marcos</span>
           </p>
         </div>
         
@@ -734,7 +772,7 @@
           <span class="news-bullet">▸</span>
           <p class="news-text">
             <strong>Microsoft Build 2026</strong> — 7 modelos MAI internos, agente Scout (OpenClaw-style), chip quântico Majorana 2, Project Solara.
-            <span class="news-tag">Enterprise</span>
+            <span class="news-tag tag-biz">Enterprise</span>
           </p>
         </div>
       </div>
@@ -811,7 +849,7 @@
 
       <div class="app-grid">
         <!-- App 1 -->
-        <div class="app-card">
+        <div class="app-card card-sage">
           <div class="app-header">
             <span class="app-source">📖 The Rundown — Tutorial</span>
             <h3 class="app-title">Automatize seu calendário com Manus</h3>
@@ -825,7 +863,7 @@
         </div>
 
         <!-- App 2 -->
-        <div class="app-card">
+        <div class="app-card card-terracotta">
           <div class="app-header">
             <span class="app-source">🧠 Superhuman — AI Academy</span>
             <h3 class="app-title">Crie seu digital twin com Gemini Omni</h3>
@@ -839,7 +877,7 @@
         </div>
 
         <!-- App 3 -->
-        <div class="app-card">
+        <div class="app-card card-amber">
           <div class="app-header">
             <span class="app-source">🐦 Reddit — Dica de Prompt</span>
             <h3 class="app-title">Second Brain Organizer</h3>
